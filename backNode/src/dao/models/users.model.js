@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     required: false,
   },
   age: {
-    type: String,
+    type: Number, // Cambiado a Number
     required: true,
   },
   email: {
@@ -77,8 +77,7 @@ const userSchema = new mongoose.Schema({
   },
   pricing: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'pricings', // Relación con la colección de precios (3 precios fijos)
+      type: Number, // Array de precios fijos
     },
   ],
   time_applied: {

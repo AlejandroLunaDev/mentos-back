@@ -47,7 +47,7 @@ const callbackGoogle = async (req, res) => {
   };
     
 
-    const token = generaJWT(userLimited);
+    const token = generateJWT(userLimited);
     res.cookie(config.PASS_COOKIE, token, cookieOptions);
 
     // Redirige al usuario a la URL adecuada según el rol y el entorno

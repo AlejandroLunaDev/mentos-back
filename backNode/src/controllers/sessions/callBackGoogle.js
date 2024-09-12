@@ -40,8 +40,9 @@ const callbackGoogle = async (req, res) => {
 
     // Genera un token JWT para el usuario con los datos necesarios
     let cookieOptions = {
-      sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
-      secure: process.env.NODE_ENV === 'production', 
+      sameSite: process.env.NODE_ENV === 'production' ? 'Lax' : 'Lax',
+      secure: false,
+      httpOnly: false, 
       domain: process.env.NODE_ENV === 'production' ? 'localhost' : undefined,
       maxAge: 24 * 60 * 60 * 1000,
   };

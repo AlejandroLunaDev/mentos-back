@@ -44,7 +44,7 @@ const initializePassport = () => {
       {
         clientID: config.GOOGLE_CLIENT_ID,
         clientSecret: config.GOOGLE_CLIENT_SECRET,
-        callbackURL: config.GOOGLE_CALLBACK_URL,
+        callbackURL: config.GOOGLE_CALLBACK_URL_PROD,
         scope: ['profile', 'email'],
       },
       async (accessToken, refreshToken, profile, done) => {

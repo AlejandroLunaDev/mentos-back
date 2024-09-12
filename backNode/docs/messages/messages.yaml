@@ -1,0 +1,168 @@
+openapi: 3.0.0
+info:
+  title: Messages API
+  description: API para manejar mensajes en la plataforma.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000/api/messages
+    description: Servidor local
+
+paths:
+  /:
+    post:
+      summary: Crear un nuevo mensaje
+      tags:
+        - Mensajes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                chat:
+                  type: string
+                  description: ID del chat asociado.
+                  example: 6123abc456def78901234567
+                sender:
+                  type: string
+                  description: ID del usuario que envía el mensaje.
+                  example: 12345abcdef67890
+                content:
+                  type: string
+                  description: Contenido del mensaje.
+                  example: "Hola, ¿cómo estás?"
+      responses:
+        201:
+          description: Mensaje creado con éxito
+        400:
+          description: Error de validación o datos incorrectos
+
+    get:
+      summary: Obtener todos los mensajes
+      tags:
+        - Mensajes
+      responses:
+        200:
+          description: Lista de mensajes obtenida correctamente
+        500:
+          description: Error al obtener los mensajes
+
+  /{messageId}:
+    get:
+      summary: Obtener un mensaje por ID
+      tags:
+        - Mensajes
+      parameters:
+        - in: path
+          name: messageId
+          required: true
+          schema:
+            type: string
+          description: ID del mensaje a obtener
+      responses:
+        200:
+          description: Mensaje obtenido con éxito
+        404:
+          description: Mensaje no encontrado
+
+    put:
+      summary: Actualizar un mensaje por ID
+      tags:
+        - Mensajes
+      parameters:
+        - in: path
+          name: messageId
+          required: true
+          schema:
+            type: string
+          description: ID del mensaje a actualizar
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  description: Nuevo contenido del mensaje
+                  example: "Mensaje actualizado"
+      responses:
+        200:
+          description: Mensaje actualizado con éxito
+        400:
+          description: Error de validación o datos incorrectos
+        404:
+          description: Mensaje no encontrado
+
+    delete:
+      summary: Eliminar un mensaje por ID
+      tags:
+        - Mensajes
+      parameters:
+        - in: path
+          name: messageId
+          required: true
+          schema:
+            type: string
+          description: ID del mensaje a eliminar
+      responses:
+        200:
+          description: Mensaje eliminado con éxito
+        404:
+          description: Mensaje no encontrado
+
+  /chat/{chatId}:
+    get:
+      summary: Obtener mensajes por ID del chat
+      tags:
+        - Mensajes
+      parameters:
+        - in: path
+          name: chatId
+          required: true
+          schema:
+            type: string
+          description: ID del chat cuyos mensajes se desean obtener
+      responses:
+        200:
+          description: Lista de mensajes obtenida con éxito
+        404:
+          description: Chat no encontrado
+
+  /user/{userId}:
+    get:
+      summary: Obtener mensajes por ID de usuario
+      tags:
+        - Mensajes
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+          description: ID del usuario cuyos mensajes se desean obtener
+      responses:
+        200:
+          description: Lista de mensajes obtenida con éxito
+        404:
+          description: Usuario no encontrado
+
+  /threads/{messageId}:
+    get:
+      summary: Obtener hilos de mensajes (respuestas) por ID de mensaje
+      tags:
+        - Mensajes
+      parameters:
+        - in: path
+          name: messageId
+          required: true
+          schema:
+            type: string
+          description: ID del mensaje principal para obtener sus hilos
+      responses:
+        200:
+          description: Lista de respuestas obtenida con éxito
+        404:
+          description: Mensaje no encontrado

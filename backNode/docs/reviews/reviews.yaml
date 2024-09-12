@@ -1,0 +1,201 @@
+openapi: 3.0.1
+info:
+  title: Reseñas API
+  description: API para manejar reseñas de mentores y mentees.
+  version: 1.0.0
+
+tags:
+  - name: Reviews
+    description: Operaciones relacionadas con las reseñas.
+
+paths:
+  /api/reviews:
+    get:
+      tags:
+        - Reviews
+      summary: Obtener todas las reseñas
+      description: Obtiene una lista de todas las reseñas.
+      responses:
+        '200':
+          description: Lista de reseñas obtenida exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Review'
+        '500':
+          description: Error interno del servidor
+
+    post:
+      tags:
+        - Reviews
+      summary: Crear una nueva reseña
+      description: Crea una nueva reseña proporcionando la información necesaria.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReviewInput'
+      responses:
+        '201':
+          description: Reseña creada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Review'
+        '400':
+          description: Solicitud incorrecta
+        '404':
+          description: Usuario no encontrado
+        '500':
+          description: Error interno del servidor
+
+  /api/reviews/{id}:
+    get:
+      tags:
+        - Reviews
+      summary: Obtener una reseña por ID
+      description: Obtiene una reseña específica mediante su ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID de la reseña que se desea obtener.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Reseña obtenida exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Review'
+        '404':
+          description: Reseña no encontrada
+        '500':
+          description: Error interno del servidor
+
+  /api/reviews/mentor/{mentorId}:
+    get:
+      tags:
+        - Reviews
+      summary: Obtener reseñas por ID del mentor
+      description: Obtiene todas las reseñas relacionadas con un mentor específico mediante su ID.
+      parameters:
+        - name: mentorId
+          in: path
+          required: true
+          description: ID del mentor cuyas reseñas se desean obtener.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lista de reseñas obtenidas exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Review'
+        '404':
+          description: Mentor no encontrado
+        '500':
+          description: Error interno del servidor
+
+components:
+  schemas:
+    ReviewInput:
+      type: object
+      required:
+        - mentee
+        - mentor
+        - overallRating
+        - message
+        - categories
+      properties:
+        mentee:
+          type: string
+          description: ID del mentee que está dejando la reseña.
+          example: "66e0c8cb742d73a4ae198643"
+        mentor:
+          type: string
+          description: ID del mentor que está siendo evaluado.
+          example: "66e0b8d8bb7ab07fc518e5b2"
+        overallRating:
+          type: number
+          format: float
+          description: Calificación general de la reseña, debe estar entre 1 y 5.
+          example: 4.5
+        message:
+          type: string
+          description: Mensaje o comentario de la reseña.
+          example: "Excelente mentor, muy útil en la resolución de problemas."
+        categories:
+          type: array
+          description: Array de categorías con calificaciones específicas.
+          items:
+            type: object
+            required:
+              - name
+              - rating
+            properties:
+              name:
+                type: string
+                description: Nombre de la categoría evaluada.
+                example: "comunicador"
+              rating:
+                type: number
+                format: float
+                description: Calificación otorgada a la categoría, debe estar entre 1 y 5.
+                example: 5
+
+    Review:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID único de la reseña.
+          example: "60c72b2f9b1e8a001f8e4d5f"
+        mentee:
+          type: string
+          description: ID del mentee que dejó la reseña.
+          example: "60c72b2f9b1e8a001f8e4d5a"
+        mentor:
+          type: string
+          description: ID del mentor que recibió la reseña.
+          example: "60c72b2f9b1e8a001f8e4d5b"
+        overallRating:
+          type: number
+          format: float
+          description: Calificación general dada en la reseña.
+          example: 4.5
+        message:
+          type: string
+          description: Mensaje o comentario dejado en la reseña.
+          example: "Muy buena experiencia."
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: Nombre de la categoría evaluada.
+                example: "comunicador"
+              rating:
+                type: number
+                format: float
+                description: Calificación otorgada a la categoría.
+                example: 5
+        createdAt:
+          type: string
+          format: date-time
+          description: Fecha y hora en que se creó la reseña.
+          example: "2024-09-10T14:48:00.000Z"
+        updatedAt:
+          type: string
+          format: date-time
+          description: Fecha y hora en que se actualizó la reseña por última vez.
+          example: "2024-09-11T14:48:00.000Z"

@@ -1,0 +1,96 @@
+openapi: 3.0.1
+info:
+  title: Autenticación de Usuarios
+  description: API para gestionar la autenticación de usuarios (login, logout, registro y Google OAuth).
+  version: 1.0.0
+tags:
+  - name: Autenticación
+    description: Operaciones relacionadas con autenticación
+
+paths:
+  /api/sessions/login:
+    post:
+      tags:
+        - Autenticación
+      summary: Iniciar sesión
+      description: Permite a los usuarios iniciar sesión con email y contraseña.
+      requestBody:
+        description: Credenciales de usuario
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: user@example.com
+                password:
+                  type: string
+                  example: yourpassword
+      responses:
+        '200':
+          description: Inicio de sesión exitoso
+        '401':
+          description: Credenciales incorrectas
+
+  /api/sessions/logout:
+    post:
+      tags:
+        - Autenticación
+      summary: Cerrar sesión
+      description: Cierra la sesión del usuario actual.
+      responses:
+        '200':
+          description: Cierre de sesión exitoso
+
+  /api/sessions/register:
+    post:
+      tags:
+        - Autenticación
+      summary: Registrarse
+      description: Permite a los nuevos usuarios registrarse proporcionando su información.
+      requestBody:
+        description: Información de registro del usuario
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: user@example.com
+                password:
+                  type: string
+                  example: yourpassword
+                name:
+                  type: string
+                  example: John Doe
+      responses:
+        '201':
+          description: Registro exitoso
+        '400':
+          description: Error en el registro
+
+  /api/sessions/google:
+    get:
+      tags:
+        - Autenticación
+      summary: Autenticación con Google
+      description: Redirige al usuario a Google para autenticación.
+      responses:
+        '302':
+          description: Redirección a Google para autenticación
+
+  /api/sessions/google/callback:
+    get:
+      tags:
+        - Autenticación
+      summary: Callback de Google
+      description: Callback para manejar la autenticación de Google después de que el usuario ha aprobado.
+      responses:
+        '200':
+          description: Autenticación con Google exitosa
+        '401':
+          description: Error en la autenticación de Google

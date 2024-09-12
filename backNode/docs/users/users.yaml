@@ -1,0 +1,240 @@
+openapi: 3.0.1
+info:
+  title: API de Usuarios
+  description: API para gestionar usuarios (crear, leer, actualizar y eliminar)
+  version: 1.0.0
+
+tags:
+  - name: Users
+    description: Operaciones relacionadas con los usuarios.
+
+paths:
+  /api/users:
+    get:
+      tags:
+        - Users
+      summary: Obtener todos los usuarios
+      description: Obtiene una lista de todos los usuarios.
+      responses:
+        200:
+          description: Lista de usuarios obtenida con éxito.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        500:
+          description: Error al obtener los usuarios.
+
+    post:
+      tags:
+        - Users
+      summary: Crear un nuevo usuario
+      description: Crea un nuevo usuario con los datos proporcionados.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUser'
+      responses:
+        201:
+          description: Usuario creado con éxito.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        400:
+          description: Error de validación.
+        500:
+          description: Error al crear el usuario.
+
+  /api/users/{id}:
+    get:
+      tags:
+        - Users
+      summary: Obtener un usuario por ID
+      description: Obtiene un usuario específico según su ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID del usuario
+      responses:
+        200:
+          description: Usuario obtenido con éxito.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        404:
+          description: Usuario no encontrado.
+        500:
+          description: Error al obtener el usuario.
+
+    put:
+      tags:
+        - Users
+      summary: Actualizar un usuario por ID
+      description: Actualiza los datos de un usuario específico.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID del usuario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUser'
+      responses:
+        200:
+          description: Usuario actualizado con éxito.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        400:
+          description: Error de validación.
+        404:
+          description: Usuario no encontrado.
+        500:
+          description: Error al actualizar el usuario.
+
+    delete:
+      tags:
+        - Users
+      summary: Eliminar un usuario por ID
+      description: Elimina un usuario específico según su ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID del usuario
+      responses:
+        200:
+          description: Usuario eliminado con éxito.
+        404:
+          description: Usuario no encontrado.
+        500:
+          description: Error al eliminar el usuario.
+
+  /api/users/email/{email}:
+    get:
+      tags:
+        - Users
+      summary: Obtener un usuario por email
+      description: Obtiene un usuario específico según su email.
+      parameters:
+        - name: email
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Email del usuario
+      responses:
+        200:
+          description: Usuario obtenido con éxito.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        404:
+          description: Usuario no encontrado.
+        500:
+          description: Error al obtener el usuario.
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID único del usuario
+        first_name:
+          type: string
+          description: Nombre del usuario
+        last_name:
+          type: string
+          description: Apellido del usuario
+        age:
+          type: integer
+          description: Edad del usuario
+        email:
+          type: string
+          description: Correo electrónico del usuario
+        role:
+          type: string
+          description: Rol del usuario
+        likes:
+          type: array
+          items:
+            type: string
+          description: Lista de likes del usuario
+        reviews:
+          type: array
+          items:
+            type: string
+          description: Lista de reviews del usuario
+        chats:
+          type: array
+          items:
+            type: string
+          description: Lista de chats del usuario
+        top:
+          type: boolean
+          description: Si el usuario es destacado o no
+
+    NewUser:
+      type: object
+      required:
+        - first_name
+        - age
+        - email
+        - password
+      properties:
+        first_name:
+          type: string
+          description: Nombre del usuario
+        last_name:
+          type: string
+          description: Apellido del usuario
+        age:
+          type: integer
+          description: Edad del usuario
+        email:
+          type: string
+          description: Correo electrónico del usuario
+        password:
+          type: string
+          description: Contraseña del usuario
+        role:
+          type: string
+          description: Rol del usuario
+        likes:
+          type: array
+          items:
+            type: string
+          description: Lista de likes del usuario
+        reviews:
+          type: array
+          items:
+            type: string
+          description: Lista de reviews del usuario
+        chats:
+          type: array
+          items:
+            type: string
+          description: Lista de chats del usuario
+        top:
+          type: boolean
+          description: Si el usuario es destacado o no

@@ -55,7 +55,7 @@ const callbackGoogle = async (req, res) => {
           ? 'https://mentos.com/admin'
           : 'http://localhost:5173/admin'
         : process.env.NODE_ENV === 'production'
-        ? 'https://mentos.com/'
+        ? 'http://localhost:5173/'
         : 'http://localhost:5173/';
 
     res.status(200).redirect(redirectURL);

@@ -1,11 +1,10 @@
-import { updateUser } from '../../dao/users.dao.js'; // Ajusta la ruta según tu estructura
+import { updateUser } from '../../dao/users.dao.js';
 import generateJWT from '../../utils/generateJWT.js';
 import config from '../../config/config.js';
 
 const callbackGoogle = async (req, res) => {
   try {
     const user = req.user; // El usuario ya está autenticado con Google
-    // Actualiza la fecha de la última conexión usando el DAO
     await updateUser(user._id, { last_connection: new Date() });
 
     // Construimos el objeto userLimited según el rol
@@ -17,14 +16,8 @@ const callbackGoogle = async (req, res) => {
       role: user.role,
       avatar: user.avatar || user.thumbnail || '',
       age: user.age,
-      top: user.top,
-      likes: user.likes,
-      mentors: user.mentors,
-      reviews: user.reviews,
-      messages: user.messages,
     };
 
-    
     if (user.role === 'mentor') {
       userLimited = {
         ...userLimited,
@@ -38,35 +31,35 @@ const callbackGoogle = async (req, res) => {
       };
     }
 
-    // Genera un token JWT para el usuario con los datos necesarios
-    let cookieOptions = {
-      sameSite: 'None', // Permite compartir la cookie entre el deploy y localhost
-      secure: false, // True solo en producción con HTTPS
-      httpOnly: false, // Permite que la cookie sea leída desde el front (JavaScript)
-      domain:'localhost', // 'localhost' en desarrollo
-      maxAge: 24 * 60 * 60 * 1000, // 1 día de duración
-    };
-    
-    
-    
-
+    // Generar token JWT
     const token = generateJWT(userLimited);
-    res.cookie(config.PASS_COOKIE, token, cookieOptions);
 
-    // Redirige al usuario a la URL adecuada según el rol y el entorno
-    const redirectURL =
-      user.role === 'admin'
-        ? process.env.NODE_ENV === 'production'
-          ? 'https://mentos.com/admin'
-          : 'http://localhost:5173/admin'
-        : process.env.NODE_ENV === 'production'
-        ? 'http://localhost:5173/'
-        : 'http://localhost:5173/';
+    if (process.env.NODE_ENV === 'development') {
+      // En local, puedes enviar el token en una cookie
+      const cookieOptions = {
+        sameSite: 'Lax',
+        secure: false,
+        maxAge: 24 * 60 * 60 * 1000, // 1 día
+      };
+      res.cookie(config.PASS_COOKIE, token, cookieOptions);
 
-    res.status(200).redirect(redirectURL);
+      // Redirigir al frontend local en desarrollo
+      return res.status(200).redirect('http://localhost:5173/');
+    }
+
+    // En producción, enviar el token en JSON
+    if (process.env.NODE_ENV === 'production') {
+      return res.status(200).json({
+        message: 'Inicio de sesión exitoso',
+        token,  // Enviar el token en el cuerpo de la respuesta
+        redirectURL: user.role === 'admin' 
+          ? 'https://mentos.com/admin' 
+          : 'https://mentos.com/', // URL adecuada para producción
+      });
+    }
   } catch (error) {
     console.error(error);
-    res.status(500).send('Error al iniciar sesión con Google');
+    return res.status(500).send('Error al iniciar sesión con Google');
   }
 };
 

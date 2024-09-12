@@ -15,7 +15,9 @@ const config = {
   
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
-  GOOGLE_CALLBACK_URL_PROD: process.env.GOOGLE_CALLBACK_URL_PROD,
+  GOOGLE_CALLBACK_URL: process.env.NODE_ENV === 'production'
+  ? process.env.GOOGLE_CALLBACK_URL_PROD
+  : process.env.GOOGLE_CALLBACK_URL,
   CALLBACK_URL: process.env.CALLBACK_URL,
   PASS_COOKIE: process.env.PASS_COOKIE,
   MONGO_URL_TEST: process.env.MONGO_URL_TEST,

@@ -41,7 +41,7 @@ const callbackGoogle = async (req, res) => {
     // Genera un token JWT para el usuario con los datos necesarios
     let cookieOptions = {
       sameSite: 'None', // Permite compartir la cookie entre el deploy y localhost
-      secure: process.env.NODE_ENV === 'production', // True solo en producción con HTTPS
+      secure: false, // True solo en producción con HTTPS
       httpOnly: false, // Permite que la cookie sea leída desde el front (JavaScript)
       domain:'localhost', // 'localhost' en desarrollo
       maxAge: 24 * 60 * 60 * 1000, // 1 día de duración

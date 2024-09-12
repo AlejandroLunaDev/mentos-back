@@ -39,14 +39,16 @@ const callbackGoogle = async (req, res) => {
     }
 
     // Genera un token JWT para el usuario con los datos necesarios
-    const token = generateJWT(userLimited);
+    let cookieOptions = {
+      sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
+      secure: process.env.NODE_ENV === 'production', 
+      domain: process.env.NODE_ENV === 'production' ? 'localhost' : undefined,
+      maxAge: 24 * 60 * 60 * 1000,
+  };
+    
 
-    // Configura la cookie con el token
-    res.cookie(config.PASS_COOKIE, token, {
-      maxAge: 1000 * 60 * 60, // 1 hora
-      httpOnly: false,
-      sameSite: 'Lax',
-    });
+    const token = generaJWT(userLimited);
+    res.cookie(config.PASS_COOKIE, token, cookieOptions);
 
     // Redirige al usuario a la URL adecuada según el rol y el entorno
     const redirectURL =

@@ -1,5 +1,5 @@
 import { addReview } from '../../dao/reviews.dao.js'; // Ajusta la ruta según tu estructura
-import { getUserById } from '../../dao/users.dao.js'; // Ajusta la ruta según tu estructura
+import { getUserById, addReviewToUser } from '../../dao/users.dao.js'; // Ajusta la ruta según tu estructura
 
 // Controlador para agregar una reseña
 const addReviewController = async (req, res) => {
@@ -39,9 +39,15 @@ const addReviewController = async (req, res) => {
       message,
       categories,
     };
-
+    
     // Llamar a la función DAO para agregar la reseña
     const newReview = await addReview(reviewData);
+    console.log('New Review:', newReview);
+
+    // Actualizar el array de reseñas de los usuarios
+  
+    await addReviewToUser(mentor, newReview._id);
+    console.log('New Review:', newReview._id);
 
     // Devolver la reseña agregada
     return res.status(201).json(newReview);
@@ -52,4 +58,3 @@ const addReviewController = async (req, res) => {
 };
 
 export default addReviewController;
-

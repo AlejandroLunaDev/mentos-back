@@ -87,15 +87,19 @@ const addLikeToUser = async (userId, likerId) => {
 // Añadir una review a un usuario
 const addReviewToUser = async (userId, reviewId) => {
   try {
-    return await UserModel.findByIdAndUpdate(
+    console.log(`Updating user ${userId} with review ${reviewId}`);
+    const updatedUser = await UserModel.findByIdAndUpdate(
       userId,
       { $push: { reviews: reviewId } }, // Añade una nueva review
       { new: true, runValidators: true }
     ).exec();
+    console.log('Updated User:', updatedUser);
+    return updatedUser;
   } catch (error) {
     throw new Error('Error adding review to user: ' + error.message);
   }
 };
+
 
 // Añadir un chat a un usuario
 const addChatToUser = async (userId, chatId) => {

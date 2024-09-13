@@ -1,6 +1,15 @@
 import { addReview } from '../../dao/reviews.dao.js'; // Ajusta la ruta según tu estructura
 import { getUserById, addReviewToUser } from '../../dao/users.dao.js'; // Ajusta la ruta según tu estructura
 
+// Las categorías permitidas según el esquema
+const allowedCategories = [
+  'constructivo',
+  'motivacion',
+  'comunicador',
+  'resolucion de dudas',
+  'didactico'
+];
+
 // Controlador para agregar una reseña
 const addReviewController = async (req, res) => {
   try {
@@ -24,11 +33,20 @@ const addReviewController = async (req, res) => {
       return res.status(400).json({ error: 'La calificación debe estar entre 1 y 5' });
     }
 
-    // Validar que cada categoría tenga el nombre y calificación
-    for (const category of categories) {
-      if (!category.name || !category.rating) {
-        return res.status(400).json({ error: 'Cada categoría debe tener un nombre y una calificación' });
+    // Validar que las 4 categorías estén presentes y que cada una tenga su calificación
+    const formattedCategories = [];
+    for (const category of allowedCategories) {
+      const categoryFromRequest = categories.find(cat => cat.name === category);
+      
+      if (!categoryFromRequest || !categoryFromRequest.rating || categoryFromRequest.rating < 1 || categoryFromRequest.rating > 5) {
+        return res.status(400).json({ error: `La categoría ${category} debe tener una calificación válida entre 1 y 5` });
       }
+
+      // Agregar la categoría al array de categorías formateadas
+      formattedCategories.push({
+        name: category,
+        rating: categoryFromRequest.rating
+      });
     }
 
     // Crear el objeto de reseña
@@ -37,17 +55,14 @@ const addReviewController = async (req, res) => {
       mentor,
       overallRating,
       message,
-      categories,
+      categories: formattedCategories, // Usar solo las 4 categorías permitidas
     };
     
     // Llamar a la función DAO para agregar la reseña
     const newReview = await addReview(reviewData);
-    console.log('New Review:', newReview);
 
     // Actualizar el array de reseñas de los usuarios
-  
     await addReviewToUser(mentor, newReview._id);
-    console.log('New Review:', newReview._id);
 
     // Devolver la reseña agregada
     return res.status(201).json(newReview);

@@ -7,7 +7,10 @@ const getUsers = async () => {
     return await UserModel.find()
       .populate({
         path: 'reviews',
-        populate: { path: 'mentor', select: 'first_name last_name' }, // Si deseas también poblar el mentor dentro de la review
+        populate: [
+          { path: 'mentor', select: 'first_name last_name' }, // Poblar mentor
+          { path: 'mentee', select: 'first_name last_name' }  // Poblar mentee
+        ]
       })
       .populate('mentors', 'first_name last_name email') // Para obtener mentores
       .exec();

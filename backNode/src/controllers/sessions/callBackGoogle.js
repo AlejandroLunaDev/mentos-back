@@ -34,12 +34,12 @@ const callbackGoogle = async (req, res) => {
     // Generar token JWT
     const token = generateJWT(userLimited);
 
-    // Enviar el token en JSON, independientemente del entorno
-    return res.status(200).json({
-      message: 'Inicio de sesión exitoso',
-      token,  // Enviar el token en el cuerpo de la respuesta
-      redirectURL: 'http://localhost:5173/', // URL base del frontend
-    });
+    // Guardar token en localStorage usando el cliente
+    // Aquí hacemos una redirección con un token en la URL
+    const redirectUrl = `http://localhost:5173/?token=${token}`;
+
+    // Redirigir al cliente con el token en la URL
+    res.redirect(redirectUrl);
     
   } catch (error) {
     console.error('Error en el callback de Google:', error);

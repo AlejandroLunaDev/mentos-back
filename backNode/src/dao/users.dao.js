@@ -8,8 +8,8 @@ const getUsers = async () => {
       .populate({
         path: 'reviews',
         populate: [
-          { path: 'mentor', select: 'first_name last_name' }, // Poblar mentor
-          { path: 'mentee', select: 'first_name last_name' }  // Poblar mentee
+          { path: 'mentor', select: 'first_name last_name avatar' }, // Poblar mentor
+          { path: 'mentee', select: 'first_name last_name avatar' }  // Poblar mentee
         ]
       })
       .populate('mentors', 'first_name last_name email') // Para obtener mentores

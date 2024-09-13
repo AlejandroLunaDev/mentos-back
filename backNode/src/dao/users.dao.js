@@ -24,7 +24,16 @@ const getUsers = async () => {
 // Obtener un usuario por ID
 const getUserById = async (userId) => {
   try {
-    return await UserModel.findById(userId).exec();
+    return await UserModel.findById(userId).exec()
+    .populate({
+      path: 'reviews',
+      populate: [
+        { path: 'mentor', select: 'first_name last_name avatar' }, // Poblar mentor
+        { path: 'mentee', select: 'first_name last_name avatar' }  // Poblar mentee
+      ]
+    })
+    .populate('mentors', 'first_name last_name email') // Para obtener mentores
+    .exec();
   } catch (error) {
     throw new Error('Error getting user by ID: ' + error.message);
   }

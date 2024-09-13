@@ -16,6 +16,11 @@ const callbackGoogle = async (req, res) => {
       role: user.role,
       avatar: user.avatar || user.thumbnail || '',
       age: user.age,
+      mentor: user.mentor,
+      reviews: user.reviews,
+      chats: user.chats,
+
+
     };
 
     // Si el usuario es mentor, añadimos campos adicionales

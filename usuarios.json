@@ -1,0 +1,1155 @@
+[
+    {
+      "first_name": "Carlos",
+      "last_name": "López",
+      "age": 28,
+      "email": "carlos.lopez@example.com",
+      "password": "password123",
+      "role": "mentor",
+      "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
+      "last_connection": "2024-09-14T10:00:00Z",
+      "mentors": [],
+      "reviews": [],
+      "top": true,
+      "likes": [],
+      "chats": [],
+      "skills": ["JavaScript", "React", "Desarrollo Web"],
+      "category": ["Tecnología", "Frontend"],
+      "description": "Desarrollador web con 5 años de experiencia en React y JavaScript.",
+      "pricing": [50, 100],
+      "time_applied": 100,
+      "experience": [
+        {
+          "title": "Desarrollador Senior",
+          "place": "Tech Solutions",
+          "start_date": "2019-01-10",
+          "end_date": "2023-06-30"
+        }
+      ],
+      "education": [
+        {
+          "title": "Ingeniería en Sistemas",
+          "place": "Universidad Nacional",
+          "start_date": "2015-03-01",
+          "end_date": "2019-12-15"
+        }
+      ]
+    },
+    {
+      "first_name": "Ana",
+      "last_name": "Martínez",
+      "age": 32,
+      "email": "ana.martinez@example.com",
+      "password": "password456",
+      "role": "mentor",
+      "avatar": "https://randomuser.me/api/portraits/women/2.jpg",
+      "last_connection": "2024-09-12T18:30:00Z",
+      "mentors": [],
+      "reviews": [],
+      "top": false,
+      "likes": [],
+      "chats": [],
+      "skills": ["Física", "Mecánica Cuántica", "Termodinámica"],
+      "category": ["Ciencia", "Física"],
+      "description": "Profesora de física con un doctorado en mecánica cuántica.",
+      "pricing": [70, 120],
+      "time_applied": 200,
+      "experience": [
+        {
+          "title": "Profesora de Física",
+          "place": "Instituto Nacional",
+          "start_date": "2018-01-15",
+          "end_date": "2024-06-10"
+        }
+      ],
+      "education": [
+        {
+          "title": "Doctorado en Física",
+          "place": "Universidad de Barcelona",
+          "start_date": "2013-03-10",
+          "end_date": "2018-09-20"
+        }
+      ]
+    },
+    {
+      "first_name": "Santiago",
+      "last_name": "Gómez",
+      "age": 35,
+      "email": "santiago.gomez@example.com",
+      "password": "password789",
+      "role": "mentor",
+      "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
+      "last_connection": "2024-09-13T11:45:00Z",
+      "mentors": [],
+      "reviews": [],
+      "top": true,
+      "likes": [],
+      "chats": [],
+      "skills": ["Arte", "Dibujo", "Pintura"],
+      "category": ["Arte", "Dibujo y Pintura"],
+      "description": "Artista con 10 años de experiencia en dibujo y pintura al óleo.",
+      "pricing": [30, 70],
+      "time_applied": 150,
+      "experience": [
+        {
+          "title": "Profesor de Arte",
+          "place": "Escuela de Bellas Artes",
+          "start_date": "2015-04-01",
+          "end_date": "2024-08-01"
+        }
+      ],
+      "education": [
+        {
+          "title": "Licenciatura en Artes Visuales",
+          "place": "Universidad de Arte",
+          "start_date": "2010-01-15",
+          "end_date": "2014-11-30"
+        }
+      ]
+    },
+    {
+      "first_name": "Laura",
+      "last_name": "Pérez",
+      "age": 29,
+      "email": "laura.perez@example.com",
+      "password": "password123",
+      "role": "mentor",
+      "avatar": "https://randomuser.me/api/portraits/women/4.jpg",
+      "last_connection": "2024-09-10T09:30:00Z",
+      "mentors": [],
+      "reviews": [],
+      "top": false,
+      "likes": [],
+      "chats": [],
+      "skills": ["Biología", "Ecología", "Genética"],
+      "category": ["Ciencia", "Biología"],
+      "description": "Bióloga especializada en genética y ecología de poblaciones.",
+      "pricing": [40, 90],
+      "time_applied": 120,
+      "experience": [
+        {
+          "title": "Investigadora en Genética",
+          "place": "Centro de Biología Molecular",
+          "start_date": "2017-05-10",
+          "end_date": "2024-03-15"
+        }
+      ],
+      "education": [
+        {
+          "title": "Máster en Biología Molecular",
+          "place": "Universidad Autónoma",
+          "start_date": "2013-02-01",
+          "end_date": "2015-11-25"
+        }
+      ]
+    },
+    {
+      "first_name": "Marta",
+      "last_name": "Ruiz",
+      "age": 24,
+      "email": "marta.ruiz@example.com",
+      "password": "password456",
+      "role": "mentee",
+      "avatar": "https://randomuser.me/api/portraits/women/5.jpg",
+      "last_connection": "2024-09-13T12:00:00Z",
+      "mentors": [],
+      "reviews": [],
+      "top": false,
+      "likes": [],
+      "chats": [],
+      "skills": ["Matemáticas", "Estadística", "Álgebra"],
+      "category": ["Ciencia", "Matemáticas"],
+      "description": "Estudiante de matemáticas con interés en álgebra y estadística.",
+      "pricing": [],
+      "time_applied": 0,
+      "experience": [
+        {
+          "title": "Ayudante de Cátedra",
+          "place": "Universidad Nacional",
+          "start_date": "2022-01-15",
+          "end_date": "2024-06-01"
+        }
+      ],
+      "education": [
+        {
+          "title": "Licenciatura en Matemáticas",
+          "place": "Universidad Nacional",
+          "start_date": "2020-03-01",
+          "end_date": "2024-12-15"
+        }
+      ]
+    },
+    {
+      "first_name": "David",
+      "last_name": "García",
+      "age": 22,
+      "email": "david.garcia@example.com",
+      "password": "password789",
+      "role": "mentee",
+      "avatar": "https://randomuser.me/api/portraits/men/6.jpg",
+      "last_connection": "2024-09-11T15:45:00Z",
+      "mentors": [],
+      "reviews": [],
+      "top": false,
+      "likes": [],
+      "chats": [],
+      "skills": ["Diseño Gráfico", "Fotografía", "Photoshop"],
+      "category": ["Arte", "Diseño Gráfico"],
+      "description": "Estudiante de diseño gráfico con enfoque en fotografía y Photoshop.",
+      "pricing": [],
+      "time_applied": 0,
+      "experience": [
+        {
+          "title": "Practicante en Diseño Gráfico",
+          "place": "Agencia Creativa",
+          "start_date": "2023-05-10",
+          "end_date": "2024-05-10"
+        }
+      ],
+      "education": [
+        {
+          "title": "Licenciatura en Diseño Gráfico",
+          "place": "Escuela de Arte",
+          "start_date": "2021-02-15",
+          "end_date": "2025-12-20"
+        }
+      ]
+    },
+    {
+      "first_name": "Lucía",
+      "last_name": "Vargas",
+      "age": 27,
+      "email": "lucia.vargas@example.com",
+      "password": "password123",
+      "role": "mentee",
+      "avatar": "https://randomuser.me/api/portraits/women/6.jpg",
+      "last_connection": "2024-09-12T18:15:00Z",
+      "mentors": [],
+      "reviews": [],
+      "top": false,
+      "likes": [],
+      "chats": [],
+      "skills": ["Programación", "Python", "Machine Learning"],
+      "category": ["Tecnología", "Machine Learning"],
+      "description": "Ingeniera de software interesada en inteligencia artificial y aprendizaje automático.",
+      "pricing": [],
+      "time_applied": 0,
+      "experience": [
+        {
+          "title": "Desarrolladora Python",
+          "place": "Startup Tech",
+          "start_date": "2020-01-15",
+          "end_date": "2024-04-10"
+        }
+      ],
+      "education": [
+        {
+          "title": "Máster en Inteligencia Artificial",
+          "place": "Universidad Tecnológica",
+          "start_date": "2018-09-01",
+          "end_date": "2020-06-30"
+        }
+      ]
+    },
+    {
+      "first_name": "Fernando",
+      "last_name": "Ramírez",
+      "age": 30,
+      "email": "fernando.ramirez@example.com",
+      "password": "password456",
+      "role": "mentee",
+      "avatar": "https://randomuser.me/api/portraits/men/7.jpg",
+      "last_connection": "2024-09-11T17:00:00Z",
+      "mentors": [],
+      "reviews": [],
+      "top": false,
+      "likes": [],
+      "chats": [],
+      "skills": ["Ciberseguridad", "Linux", "Redes"],
+      "category": ["Tecnología", "Ciberseguridad"],
+      "description": "Estudiante de ciberseguridad con experiencia en redes y Linux.",
+      "pricing": [],
+      "time_applied": 0,
+      "experience": [
+        {
+          "title": "Practicante en Ciberseguridad",
+          "place": "SeguridadTech",
+          "start_date": "2023-03-01",
+          "end_date": "2024-03-01"
+        }
+      ],
+      "education": [
+        {
+          "title": "Licenciatura en Ciberseguridad",
+          "place": "Universidad Tecnológica",
+          "start_date": "2020-02-15",
+          "end_date": "2024-12-20"
+        }
+      ]
+    },
+    {
+        "first_name": "Sofía",
+        "last_name": "Mendoza",
+        "age": 40,
+        "email": "sofia.mendoza@example.com",
+        "password": "password321",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/women/10.jpg",
+        "last_connection": "2024-09-14T09:30:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": true,
+        "likes": [],
+        "chats": [],
+        "skills": ["Desarrollo Web", "Ruby on Rails", "JavaScript", "React"],
+        "category": ["Tecnología", "Fullstack"],
+        "description": "Ingeniera de software con más de 15 años de experiencia en desarrollo fullstack. He trabajado en proyectos para grandes empresas y startups, usando tecnologías modernas como React y Ruby on Rails. Me apasiona compartir mi conocimiento con nuevos desarrolladores y ayudarlos a mejorar sus habilidades técnicas y de resolución de problemas.",
+        "pricing": [80, 150],
+        "time_applied": 300,
+        "experience": [
+          {
+            "title": "Lead Fullstack Developer",
+            "place": "BigTech Corp",
+            "start_date": "2018-04-01",
+            "end_date": "2024-08-30"
+          },
+          {
+            "title": "Senior Developer",
+            "place": "Innovatech",
+            "start_date": "2014-06-15",
+            "end_date": "2018-03-31"
+          },
+          {
+            "title": "Junior Developer",
+            "place": "Startup Solutions",
+            "start_date": "2009-03-10",
+            "end_date": "2014-05-10"
+          }
+        ],
+        "education": [
+          {
+            "title": "Máster en Ingeniería de Software",
+            "place": "Universidad de Stanford",
+            "start_date": "2012-01-05",
+            "end_date": "2014-01-10"
+          },
+          {
+            "title": "Licenciatura en Informática",
+            "place": "Universidad Nacional",
+            "start_date": "2005-02-01",
+            "end_date": "2009-12-15"
+          },
+          {
+            "title": "Certificación en Ruby on Rails",
+            "place": "CodeAcademy",
+            "start_date": "2010-07-01",
+            "end_date": "2011-07-01"
+          }
+        ]
+      },
+      {
+        "first_name": "Javier",
+        "last_name": "Ortiz",
+        "age": 38,
+        "email": "javier.ortiz@example.com",
+        "password": "password987",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/men/11.jpg",
+        "last_connection": "2024-09-12T11:00:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": false,
+        "likes": [],
+        "chats": [],
+        "skills": ["Data Science", "Python", "Machine Learning", "Big Data"],
+        "category": ["Ciencia de Datos", "Machine Learning"],
+        "description": "Especialista en ciencia de datos y aprendizaje automático con más de 10 años de experiencia. Mi enfoque ha sido trabajar con grandes volúmenes de datos para optimizar procesos y tomar decisiones más inteligentes en diferentes industrias. Actualmente, lidero un equipo de data scientists que desarrolla soluciones innovadoras para la predicción y análisis de datos en tiempo real.",
+        "pricing": [100, 180],
+        "time_applied": 500,
+        "experience": [
+          {
+            "title": "Head of Data Science",
+            "place": "AnalyticsPro",
+            "start_date": "2017-09-01",
+            "end_date": "2024-07-01"
+          },
+          {
+            "title": "Data Scientist Senior",
+            "place": "TechData Solutions",
+            "start_date": "2013-02-15",
+            "end_date": "2017-08-30"
+          },
+          {
+            "title": "Analista de Datos",
+            "place": "DataCorp",
+            "start_date": "2010-03-20",
+            "end_date": "2013-01-31"
+          }
+        ],
+        "education": [
+          {
+            "title": "Máster en Ciencia de Datos",
+            "place": "MIT",
+            "start_date": "2011-09-01",
+            "end_date": "2013-06-30"
+          },
+          {
+            "title": "Licenciatura en Estadística",
+            "place": "Universidad de Buenos Aires",
+            "start_date": "2005-03-01",
+            "end_date": "2009-12-15"
+          },
+          {
+            "title": "Certificación en Big Data y Hadoop",
+            "place": "Coursera",
+            "start_date": "2015-04-10",
+            "end_date": "2015-10-30"
+          }
+        ]
+      },
+      {
+        "first_name": "Paula",
+        "last_name": "Rodríguez",
+        "age": 34,
+        "email": "paula.rodriguez@example.com",
+        "password": "password456",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/women/12.jpg",
+        "last_connection": "2024-09-13T14:15:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": true,
+        "likes": [],
+        "chats": [],
+        "skills": ["Marketing Digital", "SEO", "Content Marketing", "Estrategia de Marca"],
+        "category": ["Marketing", "Estrategia Digital"],
+        "description": "Consultora en marketing digital con más de 12 años de experiencia ayudando a empresas a desarrollar estrategias de contenido efectivas y mejorar su visibilidad online. Mi especialidad es el SEO y el marketing de contenidos, lo que ha permitido a mis clientes alcanzar sus objetivos de crecimiento y consolidarse en sus sectores.",
+        "pricing": [90, 160],
+        "time_applied": 350,
+        "experience": [
+          {
+            "title": "Directora de Estrategia Digital",
+            "place": "BrandPro",
+            "start_date": "2018-06-10",
+            "end_date": "2024-07-20"
+          },
+          {
+            "title": "Consultora SEO",
+            "place": "Freelance",
+            "start_date": "2015-01-05",
+            "end_date": "2018-05-30"
+          },
+          {
+            "title": "Especialista en Marketing Digital",
+            "place": "WebAgency",
+            "start_date": "2010-09-15",
+            "end_date": "2014-12-10"
+          }
+        ],
+        "education": [
+          {
+            "title": "MBA en Marketing",
+            "place": "Universidad de Harvard",
+            "start_date": "2013-02-01",
+            "end_date": "2015-06-15"
+          },
+          {
+            "title": "Licenciatura en Comunicación",
+            "place": "Universidad de Madrid",
+            "start_date": "2006-03-01",
+            "end_date": "2010-11-30"
+          },
+          {
+            "title": "Certificación en Google Analytics",
+            "place": "Google Academy",
+            "start_date": "2017-01-15",
+            "end_date": "2017-05-30"
+          }
+        ]
+      },
+      {
+        "first_name": "Marcelo",
+        "last_name": "Díaz",
+        "age": 45,
+        "email": "marcelo.diaz@example.com",
+        "password": "password1234",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/men/13.jpg",
+        "last_connection": "2024-09-14T08:30:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": true,
+        "likes": [],
+        "chats": [],
+        "skills": ["Gestión de Proyectos", "Liderazgo", "Scrum", "Kanban"],
+        "category": ["Management", "Agile"],
+        "description": "Líder de proyectos con más de 20 años de experiencia en gestión de equipos en entornos ágiles. Mi especialización es ayudar a organizaciones a implementar metodologías Scrum y Kanban, mejorando la eficiencia y la productividad de los equipos. He trabajado con startups y grandes corporaciones en la transformación digital de sus procesos de gestión.",
+        "pricing": [110, 200],
+        "time_applied": 600,
+        "experience": [
+          {
+            "title": "Director de Proyectos",
+            "place": "Agile Solutions",
+            "start_date": "2015-05-20",
+            "end_date": "2024-08-01"
+          },
+          {
+            "title": "Consultor Agile",
+            "place": "Consultoría Tech",
+            "start_date": "2010-01-15",
+            "end_date": "2015-04-30"
+          },
+          {
+            "title": "Project Manager",
+            "place": "Corporación Global",
+            "start_date": "2004-08-01",
+            "end_date": "2009-12-10"
+          }
+        ],
+        "education": [
+          {
+            "title": "Certificación en Scrum Master",
+            "place": "Scrum Alliance",
+            "start_date": "2011-03-01",
+            "end_date": "2011-06-30"
+          },
+          {
+            "title": "Máster en Administración de Empresas (MBA)",
+            "place": "Universidad de Yale",
+            "start_date": "2002-09-01",
+            "end_date": "2004-06-15"
+          },
+          {
+            "title": "Licenciatura en Ingeniería Industrial",
+            "place": "Universidad Politécnica",
+            "start_date": "1996-03-01",
+            "end_date": "2001-12-10"
+          }
+        ]
+      },
+      {
+        "first_name": "Andrea",
+        "last_name": "González",
+        "age": 32,
+        "email": "andrea.gonzalez@example.com",
+        "password": "password123",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/women/14.jpg",
+        "last_connection": "2024-09-10T15:20:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": false,
+        "likes": [],
+        "chats": [],
+        "skills": ["Diseño UX/UI", "Investigación de Usuarios", "Prototipos", "Figma"],
+        "category": ["Diseño", "UX/UI"],
+        "description": "Diseñadora UX/UI con más de 8 años de experiencia ayudando a empresas a crear interfaces de usuario intuitivas y agradables. He trabajado con startups tecnológicas y agencias de diseño en la creación de experiencias digitales centradas en el usuario. Mi enfoque siempre ha sido balancear estética con funcionalidad.",
+        "pricing": [70, 130],
+        "time_applied": 250,
+        "experience": [
+          {
+            "title": "Líder de Diseño UX/UI",
+            "place": "DesignLab",
+            "start_date": "2019-01-10",
+            "end_date": "2024-07-30"
+          },
+          {
+            "title": "Diseñadora UX Senior",
+            "place": "Creativa Studio",
+            "start_date": "2015-03-01",
+            "end_date": "2018-12-15"
+          },
+          {
+            "title": "Diseñadora Junior",
+            "place": "Agencia Creativa",
+            "start_date": "2013-05-10",
+            "end_date": "2015-02-28"
+          }
+        ],
+        "education": [
+          {
+            "title": "Certificación en Diseño UX/UI",
+            "place": "Interaction Design Foundation",
+            "start_date": "2017-01-05",
+            "end_date": "2017-06-15"
+          },
+          {
+            "title": "Máster en Diseño Gráfico",
+            "place": "Escuela de Diseño de Barcelona",
+            "start_date": "2013-09-01",
+            "end_date": "2015-05-30"
+          },
+          {
+            "title": "Licenciatura en Comunicación Visual",
+            "place": "Universidad de Buenos Aires",
+            "start_date": "2008-03-01",
+            "end_date": "2013-12-10"
+          }
+        ]
+      },
+      {
+        "first_name": "Miguel",
+        "last_name": "Ruiz",
+        "age": 36,
+        "email": "miguel.ruiz@example.com",
+        "password": "password789",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/men/15.jpg",
+        "last_connection": "2024-09-09T12:00:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": false,
+        "likes": [],
+        "chats": [],
+        "skills": ["DevOps", "AWS", "Docker", "Kubernetes"],
+        "category": ["DevOps", "Cloud Computing"],
+        "description": "Ingeniero DevOps con una década de experiencia en la implementación y automatización de infraestructuras en la nube. He trabajado con AWS y tecnologías como Docker y Kubernetes para optimizar y escalar arquitecturas en entornos de producción. Mi enfoque es ayudar a las empresas a mejorar la eficiencia y reducir el tiempo de despliegue.",
+        "pricing": [95, 175],
+        "time_applied": 400,
+        "experience": [
+          {
+            "title": "Ingeniero DevOps Senior",
+            "place": "CloudWorks",
+            "start_date": "2020-04-01",
+            "end_date": "2024-09-01"
+          },
+          {
+            "title": "DevOps Engineer",
+            "place": "TechCloud",
+            "start_date": "2015-07-15",
+            "end_date": "2020-03-20"
+          },
+          {
+            "title": "Administrador de Sistemas",
+            "place": "IT Solutions",
+            "start_date": "2011-09-10",
+            "end_date": "2015-06-30"
+          }
+        ],
+        "education": [
+          {
+            "title": "Certificación AWS Solutions Architect",
+            "place": "AWS Academy",
+            "start_date": "2016-05-01",
+            "end_date": "2016-09-15"
+          },
+          {
+            "title": "Máster en Computación en la Nube",
+            "place": "Universidad de Chicago",
+            "start_date": "2013-02-01",
+            "end_date": "2015-01-15"
+          },
+          {
+            "title": "Licenciatura en Ciencias de la Computación",
+            "place": "Universidad Nacional",
+            "start_date": "2007-03-01",
+            "end_date": "2011-11-20"
+          }
+        ]
+      },
+      {
+        "first_name": "Isabel",
+        "last_name": "Vega",
+        "age": 39,
+        "email": "isabel.vega@example.com",
+        "password": "password654",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/women/16.jpg",
+        "last_connection": "2024-09-08T14:45:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": true,
+        "likes": [],
+        "chats": [],
+        "skills": ["Product Management", "Estrategia de Producto", "Lean Startup", "Scrum"],
+        "category": ["Management", "Producto"],
+        "description": "Gerente de producto con más de 12 años de experiencia liderando equipos y desarrollando productos digitales exitosos. Mi enfoque ha sido siempre la implementación de metodologías ágiles y la creación de estrategias de producto alineadas con las necesidades del mercado. Me apasiona ayudar a los equipos a encontrar soluciones innovadoras y eficientes.",
+        "pricing": [105, 190],
+        "time_applied": 450,
+        "experience": [
+          {
+            "title": "Head of Product Management",
+            "place": "DigitalSolutions",
+            "start_date": "2018-08-01",
+            "end_date": "2024-07-15"
+          },
+          {
+            "title": "Senior Product Manager",
+            "place": "Tech Innovations",
+            "start_date": "2014-03-10",
+            "end_date": "2018-07-30"
+          },
+          {
+            "title": "Product Owner",
+            "place": "Startup Labs",
+            "start_date": "2011-05-01",
+            "end_date": "2014-02-28"
+          }
+        ],
+        "education": [
+          {
+            "title": "Certificación en Lean Startup",
+            "place": "Lean Startup Academy",
+            "start_date": "2016-01-15",
+            "end_date": "2016-06-10"
+          },
+          {
+            "title": "Máster en Gestión de Productos Digitales",
+            "place": "Universidad de Barcelona",
+            "start_date": "2009-09-01",
+            "end_date": "2011-07-15"
+          },
+          {
+            "title": "Licenciatura en Ingeniería Informática",
+            "place": "Universidad Politécnica",
+            "start_date": "2004-03-01",
+            "end_date": "2008-12-20"
+          }
+        ]
+      },
+      {
+        "first_name": "Ana",
+        "last_name": "Lopez",
+        "age": 38,
+        "email": "ana.lopez@example.com",
+        "password": "password234",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/women/20.jpg",
+        "last_connection": "2024-09-09T12:15:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": false,
+        "likes": [],
+        "chats": [],
+        "skills": ["Análisis Estadístico", "Matemáticas Avanzadas", "Modelos de Predicción", "Teoría de Juegos"],
+        "category": ["Matemáticas", "Estadística"],
+        "description": "Profesora de matemáticas con más de 15 años de experiencia en educación superior, especializada en análisis estadístico y modelos de predicción. Me encanta enseñar técnicas avanzadas de matemáticas a estudiantes y profesionales.",
+        "pricing": [70, 120],
+        "time_applied": 300,
+        "experience": [
+          {
+            "title": "Profesora de Matemáticas",
+            "place": "Universidad Autónoma",
+            "start_date": "2010-02-01",
+            "end_date": "2024-09-01"
+          },
+          {
+            "title": "Consultora en Estadística",
+            "place": "Consultoría Matemática",
+            "start_date": "2007-04-15",
+            "end_date": "2010-01-31"
+          }
+        ],
+        "education": [
+          {
+            "title": "Doctorado en Matemáticas Aplicadas",
+            "place": "Universidad Complutense",
+            "start_date": "2002-09-01",
+            "end_date": "2006-06-15"
+          },
+          {
+            "title": "Máster en Estadística",
+            "place": "Universidad Nacional",
+            "start_date": "2000-03-01",
+            "end_date": "2002-12-10"
+          }
+        ]
+      },
+      {
+        "first_name": "Carlos",
+        "last_name": "Pérez",
+        "age": 45,
+        "email": "carlos.perez@example.com",
+        "password": "password345",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/men/30.jpg",
+        "last_connection": "2024-09-08T10:30:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": true,
+        "likes": [],
+        "chats": [],
+        "skills": ["Física Cuántica", "Relatividad", "Teoría de Campos", "Mecánica Estadística"],
+        "category": ["Física", "Ciencia"],
+        "description": "Físico especializado en teorías cuánticas y relatividad. He trabajado en investigaciones sobre la unificación de las fuerzas fundamentales y he publicado numerosos artículos en revistas científicas de prestigio.",
+        "pricing": [120, 200],
+        "time_applied": 450,
+        "experience": [
+          {
+            "title": "Investigador Senior en Física",
+            "place": "Centro Nacional de Investigaciones Científicas",
+            "start_date": "2012-03-01",
+            "end_date": "2024-09-01"
+          },
+          {
+            "title": "Profesor de Física Teórica",
+            "place": "Universidad de Salamanca",
+            "start_date": "2007-04-01",
+            "end_date": "2012-02-28"
+          },
+          {
+            "title": "Postdoctorado en Física Cuántica",
+            "place": "Instituto Max Planck",
+            "start_date": "2003-09-01",
+            "end_date": "2007-03-31"
+          }
+        ],
+        "education": [
+          {
+            "title": "Doctorado en Física Teórica",
+            "place": "Universidad de Harvard",
+            "start_date": "1998-09-01",
+            "end_date": "2003-06-15"
+          },
+          {
+            "title": "Licenciatura en Física",
+            "place": "Universidad de Barcelona",
+            "start_date": "1994-03-01",
+            "end_date": "1998-12-20"
+          }
+        ]
+      },
+      {
+        "first_name": "Laura",
+        "last_name": "Ramírez",
+        "age": 30,
+        "email": "laura.ramirez@example.com",
+        "password": "password456",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/women/21.jpg",
+        "last_connection": "2024-09-09T08:45:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": false,
+        "likes": [],
+        "chats": [],
+        "skills": ["Ciencias Biológicas", "Ecología", "Conservación de Especies", "Botánica"],
+        "category": ["Biología", "Ciencia Ambiental"],
+        "description": "Bióloga ambiental apasionada por la conservación de especies y la preservación de hábitats naturales. Mi trabajo se centra en el estudio de los ecosistemas y el impacto del cambio climático en la biodiversidad.",
+        "pricing": [90, 160],
+        "time_applied": 350,
+        "experience": [
+          {
+            "title": "Investigadora en Ecología",
+            "place": "Instituto de Biología Ambiental",
+            "start_date": "2015-04-01",
+            "end_date": "2024-09-01"
+          },
+          {
+            "title": "Consultora en Conservación de Especies",
+            "place": "World Wildlife Fund",
+            "start_date": "2012-07-01",
+            "end_date": "2015-03-31"
+          }
+        ],
+        "education": [
+          {
+            "title": "Máster en Ciencias Ambientales",
+            "place": "Universidad de California, Berkeley",
+            "start_date": "2009-09-01",
+            "end_date": "2011-06-15"
+          },
+          {
+            "title": "Licenciatura en Biología",
+            "place": "Universidad de Buenos Aires",
+            "start_date": "2005-03-01",
+            "end_date": "2009-12-20"
+          }
+        ]
+      },
+      {
+        "first_name": "Fernando",
+        "last_name": "Santos",
+        "age": 50,
+        "email": "fernando.santos@example.com",
+        "password": "password567",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/men/31.jpg",
+        "last_connection": "2024-09-06T11:00:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": true,
+        "likes": [],
+        "chats": [],
+        "skills": ["Historia del Arte", "Crítica de Arte", "Restauración", "Estética"],
+        "category": ["Arte", "Historia"],
+        "description": "Historiador del arte con una vasta trayectoria en la crítica y restauración de obras. He colaborado en la restauración de piezas de arte renacentista y barroco en museos europeos, y tengo más de 20 años de experiencia en análisis histórico-artístico.",
+        "pricing": [85, 150],
+        "time_applied": 380,
+        "experience": [
+          {
+            "title": "Director de Restauración de Arte",
+            "place": "Museo Nacional de Arte",
+            "start_date": "2010-05-01",
+            "end_date": "2024-08-31"
+          },
+          {
+            "title": "Crítico de Arte",
+            "place": "Revista de Historia y Cultura",
+            "start_date": "2005-09-01",
+            "end_date": "2010-04-30"
+          },
+          {
+            "title": "Curador de Exposiciones",
+            "place": "Galería de Arte Moderno",
+            "start_date": "2000-03-01",
+            "end_date": "2005-08-31"
+          }
+        ],
+        "education": [
+          {
+            "title": "Doctorado en Historia del Arte",
+            "place": "Universidad de Florencia",
+            "start_date": "1995-09-01",
+            "end_date": "1999-06-15"
+          },
+          {
+            "title": "Licenciatura en Historia del Arte",
+            "place": "Universidad de Madrid",
+            "start_date": "1990-03-01",
+            "end_date": "1994-12-10"
+          }
+        ]
+      },
+      {
+        "first_name": "Marta",
+        "last_name": "Navarro",
+        "age": 37,
+        "email": "marta.navarro@example.com",
+        "password": "password678",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/women/22.jpg",
+        "last_connection": "2024-09-07T09:15:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": false,
+        "likes": [],
+        "chats": [],
+        "skills": ["Cocina Internacional", "Nutrición", "Pastelería", "Dietética"],
+        "category": ["Gastronomía", "Nutrición"],
+        "description": "Chef con especialización en cocina internacional y nutrición. Ofrezco asesoría personalizada para mejorar hábitos alimenticios y recetas saludables, combinando mi experiencia en alta cocina con conocimientos de dietética.",
+        "pricing": [80, 140],
+        "time_applied": 320,
+        "experience": [
+          {
+            "title": "Chef Principal",
+            "place": "Restaurante Gourmet Internacional",
+            "start_date": "2015-01-01",
+            "end_date": "2024-09-01"
+          },
+          {
+            "title": "Asesora Nutricional",
+            "place": "Clínica de Nutrición y Bienestar",
+            "start_date": "2010-06-01",
+            "end_date": "2014-12-31"
+          }
+        ],
+        "education": [
+          {
+            "title": "Diploma en Cocina Internacional",
+            "place": "Escuela de Cocina de París",
+            "start_date": "2006-09-01",
+            "end_date": "2008-06-15"
+          },
+          {
+            "title": "Licenciatura en Nutrición",
+            "place": "Universidad de Buenos Aires",
+            "start_date": "2002-03-01",
+            "end_date": "2006-12-20"
+          }
+        ]
+      },
+      {
+        "first_name": "Javier",
+        "last_name": "Gómez",
+        "age": 40,
+        "email": "javier.gomez@example.com",
+        "password": "password789",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+        "last_connection": "2024-09-05T12:00:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": false,
+        "likes": [],
+        "chats": [],
+        "skills": ["Diseño Gráfico", "Fotografía", "Arte Digital", "Marketing Creativo"],
+        "category": ["Diseño", "Marketing"],
+        "description": "Diseñador gráfico con experiencia en marketing creativo y fotografía. Me especializo en la creación de campañas visuales innovadoras y el diseño de contenido gráfico para empresas de diversos sectores.",
+        "pricing": [100, 180],
+        "time_applied": 330,
+        "experience": [
+          {
+            "title": "Director Creativo",
+            "place": "Agencia de Marketing Visual",
+            "start_date": "2016-02-01",
+            "end_date": "2024-09-01"
+          },
+          {
+            "title": "Fotógrafo y Diseñador",
+            "place": "Freelance",
+            "start_date": "2010-04-01",
+            "end_date": "2016-01-31"
+          }
+        ],
+        "education": [
+          {
+            "title": "Máster en Diseño Gráfico",
+            "place": "Universidad de Barcelona",
+            "start_date": "2008-09-01",
+            "end_date": "2010-06-15"
+          },
+          {
+            "title": "Licenciatura en Bellas Artes",
+            "place": "Universidad Nacional de Colombia",
+            "start_date": "2002-03-01",
+            "end_date": "2007-12-20"
+          }
+        ]
+      },
+      {
+        "first_name": "Sofia",
+        "last_name": "Mendoza",
+        "age": 29,
+        "email": "sofia.mendoza@example.com",
+        "password": "password890",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/women/23.jpg",
+        "last_connection": "2024-09-08T13:45:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": true,
+        "likes": [],
+        "chats": [],
+        "skills": ["Redacción Creativa", "Edición de Texto", "Publicaciones Digitales", "Marketing de Contenidos"],
+        "category": ["Escritura", "Marketing"],
+        "description": "Especialista en redacción creativa y marketing de contenidos con una sólida trayectoria en la creación y edición de textos para publicaciones digitales y estrategias de contenido. Mi enfoque está en crear narrativas impactantes y efectivas.",
+        "pricing": [75, 130],
+        "time_applied": 310,
+        "experience": [
+          {
+            "title": "Redactora Creativa",
+            "place": "Revista Digital Creativa",
+            "start_date": "2015-06-01",
+            "end_date": "2024-09-01"
+          },
+          {
+            "title": "Editora de Contenidos",
+            "place": "Agencia de Publicidad Online",
+            "start_date": "2012-02-01",
+            "end_date": "2015-05-31"
+          }
+        ],
+        "education": [
+          {
+            "title": "Máster en Redacción Creativa",
+            "place": "Universidad de Londres",
+            "start_date": "2009-09-01",
+            "end_date": "2011-06-15"
+          },
+          {
+            "title": "Licenciatura en Comunicación",
+            "place": "Universidad de Santiago",
+            "start_date": "2004-03-01",
+            "end_date": "2008-12-20"
+          }
+        ]
+      },
+      {
+        "first_name": "Ricardo",
+        "last_name": "Hernández",
+        "age": 41,
+        "email": "ricardo.hernandez@example.com",
+        "password": "password901",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/men/33.jpg",
+        "last_connection": "2024-09-06T14:30:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": false,
+        "likes": [],
+        "chats": [],
+        "skills": ["Música Clásica", "Teoría Musical", "Composición", "Dirección de Orquesta"],
+        "category": ["Música", "Composición"],
+        "description": "Director de orquesta y compositor con experiencia en música clásica y composición. He dirigido orquestas sinfónicas y colaborado en la creación de nuevas obras musicales, además de impartir clases sobre teoría musical.",
+        "pricing": [100, 170],
+        "time_applied": 340,
+        "experience": [
+          {
+            "title": "Director de Orquesta",
+            "place": "Orquesta Sinfónica Nacional",
+            "start_date": "2014-01-01",
+            "end_date": "2024-09-01"
+          },
+          {
+            "title": "Compositor y Arreglista",
+            "place": "Freelance",
+            "start_date": "2008-05-01",
+            "end_date": "2014-12-31"
+          }
+        ],
+        "education": [
+          {
+            "title": "Máster en Composición Musical",
+            "place": "Escuela de Música de Viena",
+            "start_date": "2005-09-01",
+            "end_date": "2007-06-15"
+          },
+          {
+            "title": "Licenciatura en Dirección de Orquesta",
+            "place": "Conservatorio de Música de Madrid",
+            "start_date": "2000-03-01",
+            "end_date": "2004-12-20"
+          }
+        ]
+      },
+      {
+        "first_name": "Elena",
+        "last_name": "García",
+        "age": 33,
+        "email": "elena.garcia@example.com",
+        "password": "password012",
+        "role": "mentor",
+        "avatar": "https://randomuser.me/api/portraits/women/24.jpg",
+        "last_connection": "2024-09-07T15:00:00Z",
+        "mentors": [],
+        "reviews": [],
+        "top": false,
+        "likes": [],
+        "chats": [],
+        "skills": ["Desarrollo Personal", "Psicología Positiva", "Coaching", "Gestión del Estrés"],
+        "category": ["Desarrollo Personal", "Psicología"],
+        "description": "Coach certificada y psicóloga positiva con enfoque en el desarrollo personal y la gestión del estrés. Trabajo con individuos y grupos para mejorar su bienestar emocional y alcanzar sus objetivos personales y profesionales.",
+        "pricing": [90, 160],
+        "time_applied": 300,
+        "experience": [
+          {
+            "title": "Coach de Desarrollo Personal",
+            "place": "Centro de Coaching Integral",
+            "start_date": "2016-03-01",
+            "end_date": "2024-09-01"
+          },
+          {
+            "title": "Psicóloga Positiva",
+            "place": "Consultorio Privado",
+            "start_date": "2011-08-01",
+            "end_date": "2016-02-28"
+          }
+        ],
+        "education": [
+          {
+            "title": "Máster en Psicología Positiva",
+            "place": "Universidad de Harvard",
+            "start_date": "2008-09-01",
+            "end_date": "2010-06-15"
+          },
+          {
+            "title": "Licenciatura en Psicología",
+            "place": "Universidad de Buenos Aires",
+            "start_date": "2002-03-01",
+            "end_date": "2007-12-20"
+          }
+        ]
+      }
+  ]
+  

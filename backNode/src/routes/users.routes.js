@@ -7,7 +7,8 @@ import {
   updateUserController,
   deleteUserController,
   addLikeToUserController,
-  removeLikeFromUserController // Asegúrate de que el nombre sea correcto
+  removeLikeFromUserController,
+  addMentorToUserController // Asegúrate de que el nombre sea correcto
 } from '../controllers/users/index.js'; // Asegúrate de que la ruta sea correcta
 
 const router = express.Router();
@@ -20,5 +21,6 @@ router.put('/:id', updateUserController);
 router.delete('/:id', deleteUserController);
 router.post('/like', addLikeToUserController);
 router.post('/like/remove', removeLikeFromUserController);
+router.post('/:userId/mentors/:mentorId', addMentorToUserController);
 
 export default router;

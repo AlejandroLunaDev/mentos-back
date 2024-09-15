@@ -6,3 +6,4 @@ export { default as updateUserController } from './updateUser.js';
 export { default as deleteUserController } from './deleteUser.js';
 export { default as addLikeToUserController } from './addLikeToUser.js';
 export { default as removeLikeFromUserController } from './removeLikeFromUser.js';
+export { default as addMentorToUserController } from './addMentorToUser.js';

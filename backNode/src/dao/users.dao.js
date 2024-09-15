@@ -192,6 +192,21 @@ const removeLikeFromUser = async (userId, likerId) => {
   }
 };
 
+// Añadir un mentor a un usuario
+const addMentorToUser = async (userId, mentorId) => {
+  try {
+    // Actualiza el campo mentors del usuario, agregando el mentor si no está ya
+    return await UserModel.findByIdAndUpdate(
+      userId,
+      { $addToSet: { mentors: mentorId } }, // $addToSet evita duplicados
+      { new: true, runValidators: true }
+    ).exec();
+  } catch (error) {
+    throw new Error('Error adding mentor to user: ' + error.message);
+  }
+};
+
+
 
 export {
   getUsers,
@@ -207,5 +222,6 @@ export {
   addExperienceToUser,
   addEducationToUser,
   addSkillsToUser,
-  removeLikeFromUser
+  removeLikeFromUser,
+  addMentorToUser,
 };

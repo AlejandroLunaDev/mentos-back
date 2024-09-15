@@ -1,16 +1,10 @@
-import { updateUser, getUserById } from '../../dao/users.dao.js'; // Asegúrate de tener un método para encontrar el usuario por ID
+import { updateUser } from '../../dao/users.dao.js';
 import generateJWT from '../../utils/generateJWT.js';
 import config from '../../config/config.js';
 
 const callbackGoogle = async (req, res) => {
   try {
-    // El usuario autenticado con Google se obtiene de req.user
-    const userId = req.user._id;
-
-    // Buscar el usuario y hacer populate del campo mentors
-    const user = await getUserById(userId).populate('mentors'); // Esto incluye la información completa de los mentores
-
-    // Actualizar la última conexión del usuario
+    const user = req.user; // El usuario ya está autenticado con Google
     await updateUser(user._id, { last_connection: new Date() });
 
     // Construimos el objeto userLimited
@@ -22,7 +16,7 @@ const callbackGoogle = async (req, res) => {
       role: user.role,
       avatar: user.avatar || user.thumbnail || '',
       age: user.age,
-      mentors: user.mentors, // Aquí ya estará populado
+      mentors: user.mentors,
       reviews: user.reviews,
       chats: user.chats,
     };
@@ -40,11 +34,14 @@ const callbackGoogle = async (req, res) => {
       });
     }
 
-    // Generar token JWT con la información del usuario
+    // Generar token JWT
     const token = generateJWT(userLimited);
 
-    // Redirigir al cliente con el token en la URL
+    // Guardar token en localStorage usando el cliente
+    // Aquí hacemos una redirección con un token en la URL
     const redirectUrl = `http://localhost:5173/?token=${token}`;
+
+    // Redirigir al cliente con el token en la URL
     res.redirect(redirectUrl);
     
   } catch (error) {

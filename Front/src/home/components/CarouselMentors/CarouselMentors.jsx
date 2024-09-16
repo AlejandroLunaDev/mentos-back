@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 // Función para obtener mentores al azar
 const getRandomMentors = (mentors, count = 9) => {
-  const shuffled = mentors.sort(() => 0.5 - Math.random());
+  const shuffled = [...mentors].sort(() => 0.5 - Math.random()); // Crea una copia antes de ordenar
   return shuffled.slice(0, count);
 };
 

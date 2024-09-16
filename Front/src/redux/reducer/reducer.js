@@ -5,6 +5,7 @@ import {
   ADD_FAVORITE,
   REMOVE_FAVORITE,
   GET_ALL_MENTORS,
+  GET_MENTORS,
   GET_ALL_MENTORS_TOP,
   ORDER_BY_PRICE,
   ORDER_BY_NAME,
@@ -30,6 +31,7 @@ let initialState = {
   access: { state: false, ref: "" },
   allMentors: [],
   allMentorsCopy: [],
+  allMentorsCopy2: [],
   allMentorsPrice: [],
   categories: [],
   skills: [],
@@ -58,6 +60,13 @@ const reducer = (state = initialState, { type, payload }) => {
         ...state,
         allMentors: mentors,
         allMentorsCopy: mentors,
+      };
+    }
+    case GET_MENTORS: {
+      let mentors = payload.filter(user => user.role === "mentor");
+      return {
+        ...state,
+        allMentorsCopy2: mentors
       };
     }
     case GET_ALL_MENTORS_TOP: {
@@ -108,11 +117,12 @@ const reducer = (state = initialState, { type, payload }) => {
       };
     }
     case FILTER_BY_SKILLS:
+      let mentorsFilter = state.allMentors.filter(mentor =>
+        payload.every(skill => mentor.skills.includes(skill))
+      )
       return {
         ...state,
-        allMentorsCopy: state.allMentors.filter(mentor =>
-          payload.every(skill => mentor.skills.includes(skill))
-        ),
+        allMentorsCopy: mentorsFilter
       };
 
     case FILTER_BY_NAME:

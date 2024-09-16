@@ -29,7 +29,9 @@ import {
   LOGIN_GOOGLE_SUCCESS,
   LOGIN_GOOGLE_FAILURE
 } from "./types";
+import { getBaseUrl } from "../../common/helper/envHelper";
 
+axios.defaults.baseURL = getBaseUrl();
 //----------------------MENTOR-------------------
 export function getAllMentor() {
   return async function (dispatch) {
@@ -59,7 +61,6 @@ export function getAllMentorTop() {
     }
   };
 }
-
 //--------------user----------
 
 export function addFavorite(userId, userFav, mentorId) {
@@ -68,7 +69,7 @@ export function addFavorite(userId, userFav, mentorId) {
   };
   return async function (dispatch) {
     try {
-      const response = await axios.put(`/api/users/${userId}`, data);
+      const response = await axios.put(`api/users/${userId}`, data);
       return dispatch({
         type: ADD_FAVORITE,
         payload: response.data.detail,
@@ -85,7 +86,7 @@ export function removeFavorite(userId, userFav, mentorId) {
   };
   return async function (dispatch) {
     try {
-      const response = await axios.put(`/api/users/${userId}`, data);
+      const response = await axios.put(`api/users/${userId}`, data);
       return dispatch({
         type: REMOVE_FAVORITE,
         payload: response.data.detail,
@@ -167,7 +168,7 @@ export function getmentorsById(id) {
   return async function (dispatch) {
     try {
       //console.log(title);
-      const response = await axios.post(`/api/users/${id}`);
+      const response = await axios.post(`api/users/${id}`);
       return dispatch({
         type: GET_MENTOR_BY_ID,
         payload: response.data,
@@ -197,7 +198,7 @@ export function orderByName(order) {
 export function getComents() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`/getComments`);
+      const response = await axios.get(`getComments`);
       return dispatch({
         type: GET_COMMENTS,
         payload: response.data,
@@ -212,7 +213,7 @@ export function postComment(comment) {
   return async function (dispatch) {
     try {
       //console.log(comment);
-      const response = await axios.post(`/postComment`, comment);
+      const response = await axios.post(`postComment`, comment);
       return dispatch({
         type: POST_COMMENT,
         payload: response.data,
@@ -227,7 +228,7 @@ export function updateCommentById({ id, rating, comment }) {
   return async function (dispatch) {
     try {
       console.log(id, rating, comment, "desde actions");
-      const response = await axios.put(`/updateComment/${id}`, {
+      const response = await axios.put(`updateComment/${id}`, {
         rating,
         comment,
       });
@@ -244,7 +245,7 @@ export function deleteCommentById(id) {
   return async function (dispatch) {
     try {
       //console.log(id);
-      const response = await axios.delete(`/deleteComment/${id}`);
+      const response = await axios.delete(`deleteComment/${id}`);
       return dispatch({
         type: DELETE_COMMENT_BY_ID,
         payload: response.data,
@@ -262,7 +263,7 @@ export function obtainToken({ email }) {
         id: "6",
         data1: email,
       };
-      const response = await axios.post("/activateUser/", theData);
+      const response = await axios.post("activateUser/", theData);
       dispatch({ type: GET_TOKEN, payload: response.data });
       return response.data.text;
     } catch (error) {
@@ -295,10 +296,6 @@ export function logOut() {
   };
 }
 
-
-
-
-
 export function loginProfile(bool) {
   return {
     type: LOGIN_PROFILE,
@@ -315,7 +312,7 @@ export function listWish(bool) {
 export function getUsers() {
   return async function (dispatch) {
     try {
-      const response = await axios.post(`/findUser`);
+      const response = await axios.post(`findUser`);
       // console.log("data.detail-->",response.data.detail);
       return dispatch({
         type: GET_USERS,
@@ -329,7 +326,7 @@ export function getUsers() {
 export function getUserById(id) {
   return async function (dispatch) {
     try {
-      const response = await axios.post(`/findUser/${id}`);
+      const response = await axios.post(`findUser/${id}`);
       return dispatch({
         type: GET_USER_BY_ID,
         payload: response.data,
@@ -342,7 +339,7 @@ export function getUserById(id) {
 export function postUser(userData) {
   return async function (dispatch) {
     try {
-      const response = await axios.post(`/newUser`, userData);
+      const response = await axios.post(`newUser`, userData);
       return dispatch({
         type: POST_USER,
         payload: response.data,

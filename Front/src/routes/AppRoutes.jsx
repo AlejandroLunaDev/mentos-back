@@ -18,6 +18,8 @@ export default function AppRoutes() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/search" element={<MentorSearchAndFilter />} />
         <Route path="/mentor/:id" element={<MentorInfoPage />} />
+        <Route path="/dashboard" element={<UserDashboard />} />
+
       </Routes>
       {location.pathname !== "/search" ? <Footer /> : <></>}
     </>

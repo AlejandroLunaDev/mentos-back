@@ -1,0 +1,7 @@
+/* Backdrop.module.css */
+.backdrop {
+     /* Ensure the backdrop covers the entire screen */
+     /* Semi-transparent background */
+    backdrop-filter: blur(70px); /* Apply blur effect */
+    z-index: 999; /* Ensure it's on top of other content */
+  }

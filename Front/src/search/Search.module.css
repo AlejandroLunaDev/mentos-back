@@ -1,0 +1,48 @@
+/* === range theme and appearance === */
+.input[type="range"] {
+	font-size: 1.5rem;
+	width: 422px;
+	border-radius: 8px;
+
+}
+.input[type="range"] {
+	width: 422px;
+	border-radius: 8px;
+	color: #AA5BFF;
+	--thumb-height: 32px; /* Aumenta el tamaño del thumb */
+	--thumb-width: 32px;  /* Controla el ancho del thumb */
+	--track-height: 16px;  /* Mantén el tamaño del track */
+	--track-color: rgba(28, 27, 27, 0.142);
+	--brightness-hover: 120%;
+	--brightness-down: 80%;
+	
+  }
+  .input[type="range"]:hover::-webkit-slider-thumb {
+	filter: brightness(var(--brightness-hover));
+	cursor: grab;
+}
+  .input[type="range"]:active {
+	cursor: grabbing;
+}
+
+  .input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: var(--thumb-height); /* Tamaño del thumb */
+	width: var(--thumb-width);   /* Ancho del thumb */
+	background-color: currentColor;
+	border-radius: 100%; /* Hace que el thumb sea circular */
+	box-shadow: none; /* Elimina cualquier sombra adicional */
+	position: relative;
+	transform: translateY(calc((var(--track-height) - var(--thumb-height)) / 2)); /* Centra el thumb */
+	
+  }
+  .input[type="range"]:active::-webkit-slider-thumb {
+	filter: brightness(var(--brightness-down));
+	cursor: grabbing;
+}
+  .input[type="range"]::-webkit-slider-runnable-track {
+	height: var(--track-height); /* Mantén el tamaño del track */
+	border-radius: 8px; /* Bordes redondeados del track */
+	background: linear-gradient(var(--track-color) 0 0) no-repeat center / 100% calc(var(--track-height) + 1px);
+  }
+  

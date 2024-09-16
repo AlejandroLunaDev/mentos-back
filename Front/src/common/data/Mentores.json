@@ -1,0 +1,475 @@
+[
+    {
+        "id": 1,
+        "nombre_completo": "Carlos Martínez",
+        "imagen_de_perfil": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "clase": "Programación",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React"
+        ],
+        "rating": [
+            {
+                "puntaje": "4.8",
+                "comentario": "Las clases son geniales."
+            },
+            {
+                "puntaje": "4.5",
+                "comentario": "Muy buen mentor, recomendable."
+            },
+            {
+                "puntaje": "5.0",
+                "comentario": "Excelente experiencia."
+            },
+            {
+                "puntaje": "4.8",
+                "comentario": "Excelente mentor, explica muy bien y tiene paciencia."
+            }
+        ],
+        "precio": [
+            100,
+            150,
+            200
+        ],
+        "descripcion": "Con más de 15 años de experiencia en desarrollo web, me especializo en enseñar tecnologías frontend como HTML, CSS, JavaScript, y React."
+    },
+    {
+        "id": 2,
+        "nombre_completo": "Ana García",
+        "imagen_de_perfil": "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?q=80&w=1341&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "clase": "Matemáticas",
+        "skills": [
+            "Álgebra",
+            "Cálculo",
+            "Geometría"
+        ],
+        "rating":[ {
+            "puntaje": "4.5",
+            "comentario": "Muy buena mentora, sus explicaciones son claras y concisas."
+        },{
+            "puntaje": "2.5",
+            "comentario": "Safable."
+        },
+        {
+            "puntaje": "1.0",
+            "comentario": "Mal mentor."
+        }],
+        "precio": [
+            80,
+            120
+        ],
+        "descripcion": "Soy licenciada en matemáticas con más de 10 años de experiencia en la enseñanza. Me especializo en álgebra, cálculo y geometría."
+    },
+    {
+        "id": 3,
+        "nombre_completo": "Pedro Fernández",
+        "imagen_de_perfil": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1378&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "clase": "Jardinería",
+        "skills": [
+            "Diseño de jardines",
+            "Cuidado de plantas",
+            "Horticultura"
+        ],
+        "rating": [
+            {
+                "puntaje": "4.9",
+                "comentario": "Increíble mentor, muy apasionado y conocedor de la jardinería."
+            }
+        ],
+        "precio": [
+            50,
+            100,
+            150
+        ],
+        "descripcion": "Con más de 20 años de experiencia en jardinería, me especializo en el diseño de jardines, el cuidado de plantas y la horticultura."
+    },
+    {
+        "id": 4,
+        "nombre_completo": "María López",
+        "imagen_de_perfil": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "clase": "Cocina",
+        "skills": [
+            "Repostería",
+            "Cocina Internacional",
+            "Cocina Saludable"
+        ],
+        "rating": [
+            {
+                "puntaje": "4.7",
+                "comentario": "María es una excelente chef, sus clases son prácticas y entretenidas."
+            }
+        ],
+        "precio": [
+            120,
+            180,
+            250
+        ],
+        "descripcion": "Soy chef profesional con más de 12 años de experiencia en cocina internacional y saludable, además de ser experta en repostería."
+    },
+    {
+        "id": 5,
+        "nombre_completo": "Juan Pérez",
+        "imagen_de_perfil": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "clase": "Música",
+        "skills": [
+            "Guitarra",
+            "Piano",
+            "Teoría Musical"
+        ],
+        "rating": [
+            {
+                "puntaje": "4.6",
+                "comentario": "Muy buen músico y profesor, se nota su pasión por la enseñanza."
+            }
+        ],
+        "precio": [
+            90,
+            130,
+            190
+        ],
+        "descripcion": "Músico profesional con más de 15 años de experiencia, especializado en guitarra, piano y teoría musical."
+    },
+    {
+        "id": 6,
+        "nombre_completo": "Laura Sánchez",
+        "imagen_de_perfil": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "clase": "Fotografía",
+        "skills": [
+            "Fotografía Digital",
+            "Edición de Imágenes",
+            "Composición"
+        ],
+        "rating": [
+            {
+                "puntaje": "4.8",
+                "comentario": "Las clases de Laura son muy instructivas y fáciles de seguir."
+            }
+        ],
+        "precio": [
+            110,
+            160
+        ],
+        "descripcion": "Fotógrafa profesional con más de 10 años de experiencia, especializada en fotografía digital y edición de imágenes."
+    },
+    {
+        "id": 7,
+        "nombre_completo": "Diego Ramírez",
+        "imagen_de_perfil": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "clase": "Programación",
+        "skills": [
+            "Python",
+            "Django",
+            "Flask"
+        ],
+        "rating": [
+            {
+                "puntaje": "4.9",
+                "comentario": "Diego tiene un conocimiento profundo de Python y sus clases son muy completas."
+            },{
+                "puntaje": "4.8",
+                "comentario": "Las clases son geniales."
+            },{
+                "puntaje": "4.8",
+                "comentario": "Las clases son geniales."
+            },{
+                "puntaje": "4.8",
+                "comentario": "Las clases son geniales."
+            },{
+                "puntaje": "4.8",
+                "comentario": "Las clases son geniales."
+            }
+        ],
+        "precio": [
+            150,
+            200,
+            250
+        ],
+        "descripcion": "Ingeniero de software con más de 8 años de experiencia en desarrollo backend, especializado en Python, Django y Flask."
+    },
+    {
+        "id": 8,
+        "nombre_completo": "Sofía Herrera",
+        "imagen_de_perfil": "https://images.unsplash.com/photo-1521198022873-af0f772bf653?q=80&w=1437&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "clase": "Arte",
+        "skills": [
+            "Dibujo",
+            "Pintura al Óleo",
+            "Acuarela"
+        ],
+        "rating": [
+            {
+                "puntaje": "4.7",
+                "comentario": "Sofía es una artista increíble, sus clases son muy inspiradoras."
+            },
+            {
+                "puntaje": "4.5",
+                "comentario": "Sofía es una artista increíble, sus clases son muy inspiradoras."
+            },
+            {
+                "puntaje": "5",
+                "comentario": "Sofía es una artista increíble, sus clases son muy inspiradoras."
+            },
+            {
+                "puntaje": "4.7",
+                "comentario": "Sofía es una artista increíble, sus clases son muy inspiradoras."
+            },
+            {
+                "puntaje": "4.7",
+                "comentario": "Sofía es una artista increíble, sus clases son muy inspiradoras."
+            }
+        ],
+        "precio": [
+            100,
+            140,
+            180
+        ],
+        "descripcion": "Artista plástica con más de 12 años de experiencia, especializada en dibujo, pintura al óleo y acuarela."
+    },
+    {
+        "id": 9,
+        "nombre_completo": "Fernando Díaz",
+        "imagen_de_perfil": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "clase": "Negocios",
+        "skills": [
+            "Marketing Digital",
+            "Gestión Empresarial",
+            "Finanzas"
+        ],
+        "rating": [
+            {
+                "puntaje": "4.5",
+                "comentario": "Muy buen mentor, tiene mucha experiencia en el ámbito empresarial."
+            },{
+                "puntaje": "5",
+                "comentario": "Las clases son geniales."
+            },{
+                "puntaje": "4.2",
+                "comentario": "Las clases son geniales."
+            },{
+                "puntaje": "4.8",
+                "comentario": "Las clases son geniales."
+            }
+        ],
+        "precio": [
+            200,
+            300,
+            400
+        ],
+        "descripcion": "Consultor de negocios con más de 18 años de experiencia, especializado en marketing digital, gestión empresarial y finanzas."
+    },
+    {
+        "id": 10,
+        "nombre_completo": "Elena Torres",
+        "imagen_de_perfil": "https://images.unsplash.com/photo-1525357816819-392d2380d821?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "clase": "Idiomas",
+        "skills": [
+            "Inglés",
+            "Francés",
+            "Español"
+        ],
+        "rating": [
+            {
+                "puntaje": "4.8",
+                "comentario": "Elena es una excelente profesora, sus clases son muy dinámicas y efectivas."
+            },{
+                "puntaje": "4.1",
+                "comentario": "Las clases son geniales."
+            },{
+                "puntaje": "4.8",
+                "comentario": "Las clases son geniales."
+            },{
+                "puntaje": "4.8",
+                "comentario": "Las clases son geniales."
+            },{
+                "puntaje": "5",
+                "comentario": "Las clases son geniales."
+            },{
+                "puntaje": "4.7",
+                "comentario": "Las clases son geniales."
+            }
+        ],
+        "precio": [
+            100,
+            150,
+            200
+        ],
+        "descripcion": "Profesora de idiomas con más de 10 años de experiencia, especializada en la enseñanza de inglés, francés y español."
+    },
+    {
+        "id": 11,
+        "nombre_completo": "Ricardo Gómez",
+        "imagen_de_perfil": "https://images.unsplash.com/photo-1535368362808-e21d5f250bed?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "clase": "Escritura Creativa",
+        "skills": [
+            "Narrativa",
+            "Poesía",
+            "Edición"
+        ],
+        "rating": [
+            {
+                "puntaje": "4.9",
+                "comentario": "Ricardo es un mentor increíble, su pasión por la escritura es contagiosa."
+            },
+            {
+                "puntaje": "4.9",
+                "comentario": "Ricardo es un mentor increíble, su pasión por la escritura es contagiosa."
+            },
+            {
+                "puntaje": "4.9",
+                "comentario": "Ricardo es un mentor increíble, su pasión por la escritura es contagiosa."
+            },
+            {
+                "puntaje": "4.9",
+                "comentario": "Ricardo es un mentor increíble, su pasión por la escritura es contagiosa."
+            }
+        ],
+        "precio": [
+            120,
+            170,
+            220
+        ],
+        "descripcion": "Escritor y editor con más de 20 años de experiencia, especializado en narrativa, poesía y edición de textos creativos."
+    },
+    {
+        "id": 12,
+        "nombre_completo": "Isabel Rodríguez",
+        "imagen_de_perfil": "https://images.unsplash.com/photo-1520932767681-47fc69dd54e5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "clase": "Yoga",
+        "skills": [
+            "Hatha Yoga",
+            "Vinyasa",
+            "Meditación"
+        ],
+        "rating": [
+            {
+                "puntaje": "4.8",
+                "comentario": "Isabel tiene una energía maravillosa y sus clases son muy revitalizantes."
+            },
+            {
+                "puntaje": "4.8",
+                "comentario": "Isabel tiene una energía maravillosa y sus clases son muy revitalizantes."
+            },
+            {
+                "puntaje": "4.8",
+                "comentario": "Isabel tiene una energía maravillosa y sus clases son muy revitalizantes."
+            },
+            {
+                "puntaje": "4.8",
+                "comentario": "Isabel tiene una energía maravillosa y sus clases son muy revitalizantes."
+            }
+        ],
+        "precio": [
+            50,
+            75,
+            100
+        ],
+        "descripcion": "Instructora de yoga con más de 10 años de experiencia, especializada en Hatha Yoga, Vinyasa y técnicas de meditación."
+    },
+    {
+        "id": 13,
+        "nombre_completo": "Miguel Torres",
+        "imagen_de_perfil": "https://images.unsplash.com/photo-1528151215936-7ee1b5427d7e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "clase": "Diseño Gráfico",
+        "skills": [
+            "Photoshop",
+            "Illustrator",
+            "Diseño Web"
+        ],
+        "rating": [
+            {
+                "puntaje": "4.7",
+                "comentario": "Miguel es muy creativo y sus clases de diseño son extremadamente prácticas."
+            },
+            {
+                "puntaje": "4.7",
+                "comentario": "Miguel es muy creativo y sus clases de diseño son extremadamente prácticas."
+            },
+            {
+                "puntaje": "4.7",
+                "comentario": "Miguel es muy creativo y sus clases de diseño son extremadamente prácticas."
+            },
+            {
+                "puntaje": "4.7",
+                "comentario": "Miguel es muy creativo y sus clases de diseño son extremadamente prácticas."
+            }
+        ],
+        "precio": [
+            130,
+            180,
+            240
+        ],
+        "descripcion": "Diseñador gráfico con más de 15 años de experiencia, especializado en diseño digital utilizando herramientas como Photoshop, Illustrator y en diseño web."
+    },
+    {
+        "id": 14,
+        "nombre_completo": "Pepe",
+        "imagen_de_perfil": "https://fotografias.lasexta.com/clipping/cmsimages02/2019/11/14/66C024AF-E20B-49A5-8BC3-A21DD22B96E6/default.jpg?crop=1299,731,x0,y0&width=1900&height=1069&optimize=low",
+        "clase": "Diseño Gráfico",
+        "skills": [
+            "Photoshop",
+            "Illustrator",
+            "Diseño Web"
+        ],
+        "rating": [
+            {
+                "puntaje": "4.7",
+                "comentario": "Miguel es muy creativo y sus clases de diseño son extremadamente prácticas."
+            },
+            {
+                "puntaje": "4.7",
+                "comentario": "Miguel es muy creativo y sus clases de diseño son extremadamente prácticas."
+            },
+            {
+                "puntaje": "4.7",
+                "comentario": "Miguel es muy creativo y sus clases de diseño son extremadamente prácticas."
+            },
+            {
+                "puntaje": "4.7",
+                "comentario": "Miguel es muy creativo y sus clases de diseño son extremadamente prácticas."
+            }
+        ],
+        "precio": [
+            130,
+            180,
+            240
+        ],
+        "descripcion": "Diseñador gráfico con más de 15 años de experiencia, especializado en diseño digital utilizando herramientas como Photoshop, Illustrator y en diseño web."
+    },
+    {
+        "id": 15,
+        "nombre_completo": "CARLOS",
+        "imagen_de_perfil": "https://fotografias.lasexta.com/clipping/cmsimages02/2019/11/14/66C024AF-E20B-49A5-8BC3-A21DD22B96E6/default.jpg?crop=1299,731,x0,y0&width=1900&height=1069&optimize=low",
+        "clase": "Diseño Gráfico",
+        "skills": [
+            "Photoshop",
+            "Illustrator",
+            "Diseño Web"
+        ],
+        "rating": [
+            {
+                "puntaje": "4.7",
+                "comentario": "Miguel es muy creativo y sus clases de diseño son extremadamente prácticas."
+            },
+            {
+                "puntaje": "4.7",
+                "comentario": "Miguel es muy creativo y sus clases de diseño son extremadamente prácticas."
+            },
+            {
+                "puntaje": "4.7",
+                "comentario": "Miguel es muy creativo y sus clases de diseño son extremadamente prácticas."
+            },
+            {
+                "puntaje": "4.7",
+                "comentario": "Miguel es muy creativo y sus clases de diseño son extremadamente prácticas."
+            }
+        ],
+        "precio": [
+            130,
+            180,
+            240
+        ],
+        "descripcion": "Diseñador gráfico con más de 15 años de experiencia, especializado en diseño digital utilizando herramientas como Photoshop, Illustrator y en diseño web."
+    }
+]

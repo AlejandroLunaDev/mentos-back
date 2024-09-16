@@ -8,6 +8,7 @@ import Estadistic from './components/Estadistic';
 import SimilarMentorCarrousel from './components/SimilarMentorCarrousel';
 import Reviews from './components/Reviews';
 import averageAndCommetsNum from '../common/helper/averageAndCommetsNum';
+import { getBaseUrl } from '../common/helper/envHelper';
 
 
 
@@ -18,10 +19,10 @@ export default function MentorInfoPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [activeTab, setActiveTab] = useState('general'); // Estado para las solapas
-
+  const BASE_URL = getBaseUrl();
   useEffect(() => {
     // Reemplaza 'getMentorById' con la función que haga la solicitud correcta
-    fetch(`https://s17-14-t-php-react-production.up.railway.app/api/users/${id}`)
+    fetch(`${BASE_URL}/api/users/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setMentor(data);

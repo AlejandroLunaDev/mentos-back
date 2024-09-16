@@ -19,6 +19,7 @@ import { chatSocketHandler } from './utils/socketHandler.js'; // Importar socket
 
 const app = express();
 const port = 8080;
+const isProduction = process.env.NODE_ENV === 'production';
 
 // Conectar a la base de datos
 connectDB();
@@ -27,13 +28,19 @@ connectDB();
 initializePassport();
 app.use(passport.initialize());
 
-// Configurar CORS para habilitar localhost:5371
-const corsOptions = {
-  origin: 'http://localhost:5173',
-  credentials: true,
-};
+const origin = isProduction
+  ? ['https://mentos-s17.vercel.app/']
+  : ['http://localhost:5173'];
 
-app.use(cors(corsOptions));
+// Configurar CORS para habilitar localhost:5371
+app.use(
+  cors({
+    origin: origin,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  })
+);
 
 // Middleware para manejar peticiones JSON
 app.use(express.json());

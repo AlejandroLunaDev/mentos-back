@@ -3,6 +3,7 @@
 //pricing(array), experience(array), education(array)
 
 export const GET_ALL_MENTORS = "GET_ALL_MENTORS";
+export const GET_MENTORS = "GET_MENTORS";
 export const GET_ALL_MENTORS_TOP = "GET_ALL_MENTORS_TOP";
 
 //FILTER

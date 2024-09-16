@@ -5,6 +5,7 @@ import {
   VALIDATE_SESSION,
   LOG_OUT,
   GET_ALL_MENTORS,
+  GET_MENTORS,
   GET_ALL_MENTORS_TOP,
   ORDER_BY_PRICE,
   ORDER_BY_NAME,
@@ -37,9 +38,21 @@ export function getAllMentor() {
   return async function (dispatch) {
     try {
       const response = await axios.get("/api/users");
-      //console.log(response.data)
       return dispatch({
         type: GET_ALL_MENTORS,
+        payload: response.data,
+      });
+    } catch (error) {
+      throw Error(error.message);
+    }
+  };
+}
+export function getMentors() {
+  return async function (dispatch) {
+    try {
+      const response = await axios.get("/api/users");
+      return dispatch({
+        type: GET_MENTORS,
         payload: response.data,
       });
     } catch (error) {
@@ -136,7 +149,7 @@ export function loginGoogleUserCallback() {
       });
     }
   };
-}
+} 
 // --------------Filter ----------------
 export function FilterByCategory(category) {
   return {

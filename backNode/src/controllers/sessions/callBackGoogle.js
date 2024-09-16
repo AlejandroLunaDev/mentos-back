@@ -37,9 +37,13 @@ const callbackGoogle = async (req, res) => {
     // Generar token JWT
     const token = generateJWT(userLimited);
 
-    // Guardar token en localStorage usando el cliente
-    // Aquí hacemos una redirección con un token en la URL
-    const redirectUrl = `http://localhost:5173/?token=${token}`;
+    // Verificar si está en producción o en desarrollo
+    const isProduction = process.env.NODE_ENV === 'production';
+
+    // Definir la URL de redirección
+    const redirectUrl = isProduction
+      ? `https://mentos-s17.vercel.app/?token=${token}` // URL de producción
+      : `http://localhost:5173/?token=${token}`; // URL de desarrollo
 
     // Redirigir al cliente con el token en la URL
     res.redirect(redirectUrl);

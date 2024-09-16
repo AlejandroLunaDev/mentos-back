@@ -31,7 +31,7 @@ app.use(passport.initialize());
 const origin = isProduction
   ? ['https://mentos-s17.vercel.app/']
   : ['http://localhost:5173'];
-
+console.log('Origin:', origin);
 // Configurar CORS para habilitar localhost:5371
 app.use(
   cors({

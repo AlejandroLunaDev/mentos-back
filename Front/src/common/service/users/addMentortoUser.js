@@ -1,5 +1,9 @@
+import { getBaseUrl } from "../../helper/envHelper"; 
+
+const BASE_URL = getBaseUrl();
+
 export const addMentortoUser = async (userId, mentorId) => {
-    const response = await fetch(`https://s17-14-t-php-react-production.up.railway.app/api/users/${userId}/mentors/${mentorId}`, {
+    const response = await fetch(`${BASE_URL}/api/users/${userId}/mentors/${mentorId}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

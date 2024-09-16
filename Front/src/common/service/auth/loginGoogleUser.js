@@ -1,11 +1,11 @@
-/* import { getBaseUrl } from "../../helper/envHelper"; */
+ import { getBaseUrl } from "../../helper/envHelper"; 
 
-/* const BASE_URL = getBaseUrl();
- */
+ const BASE_URL = getBaseUrl();
+ 
 
 export const loginGoogleUser = async () => {
-    console.log("Enviando petición GET a:", `$https://s17-14-t-php-react-production.up.railway.app/api/sessions/google`);
-    window.location.href = `https://s17-14-t-php-react-production.up.railway.app/api/sessions/google`;
+    console.log("Enviando petición GET a:", `${BASE_URL}/api/sessions/google`);
+    window.location.href = `${BASE_URL}/api/sessions/google`;
 }
 
 

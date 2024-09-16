@@ -34,7 +34,7 @@ import {
 export function getAllMentor() {
   return async function (dispatch) {
     try {
-      const response = await axios.get("https://s17-14-t-php-react-production.up.railway.app/api/users");
+      const response = await axios.get("/api/users");
       //console.log(response.data)
       return dispatch({
         type: GET_ALL_MENTORS,
@@ -48,7 +48,7 @@ export function getAllMentor() {
 export function getAllMentorTop() {
   return async function (dispatch) {
     try {
-      const response = await axios.get("https://s17-14-t-php-react-production.up.railway.app/api/users");
+      const response = await axios.get("/api/users");
       //console.log(response.data)
       return dispatch({
         type: GET_ALL_MENTORS_TOP,
@@ -97,14 +97,14 @@ export function removeFavorite(userId, userFav, mentorId) {
 }
 
 //---------------------GOOGLE---------------------------------
-const BASE_URL = 'https://s17-14-t-php-react-production.up.railway.app';
+
 // Iniciar el login redirigiendo al usuario a Google 
 export function loginGoogleUser() {
   return async function (dispatch) {
     try {
       dispatch({ type: LOGIN_GOOGLE_REQUEST });
       // Redirige a la página de autenticación de Google
-      const url = `${BASE_URL}/api/sessions/google`;
+      const url = `/api/sessions/google`;
       window.location.assign(url);
 
     } catch (error) {
@@ -122,7 +122,7 @@ export function loginGoogleUserCallback() {
       dispatch({ type: LOGIN_GOOGLE_REQUEST });
 
       // Hacer la petición al backend para obtener los datos del usuario
-      const response = await axios.get(`${BASE_URL}/api/sessions/google/callback`);
+      const response = await axios.get(`/api/sessions/google/callback`);
 
       return dispatch({
         type: LOGIN_GOOGLE_SUCCESS,

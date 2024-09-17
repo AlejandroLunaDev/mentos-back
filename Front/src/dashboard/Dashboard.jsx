@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserById } from "../redux/actions/actions";
+
 const Banner = () => (
   <div className="col-span-3  bg-gray-900 text-white p-6 rounded-lg mb-6 relative overflow-hidden">
     <h2 className=" flex justify-center items-center text-4xl mt-10 font-semibold mb-2  text-violeta z-10 relative">
@@ -17,7 +21,10 @@ const MentorshipItem = ({ image, title }) => (
       <img src={image} alt={title} className="w-10 h-10 rounded-full mr-3" />
       <span>{title}</span>
     </div>
-    <img src="./icons/triangle.svg" className="w-5 h-5 -rotate-90 text-gray-400" />
+    <img
+      src="./icons/triangle.svg"
+      className="w-5 h-5 -rotate-90 text-gray-400"
+    />
   </div>
 );
 
@@ -81,6 +88,13 @@ const PopularMentorship = ({ image, name, title }) => (
 );
 
 export default function UserDashboard() {
+  const user = useSelector((state) => state.userDetail);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUserById(user._id));
+  }, [dispatch, user._id]);
+  console.log("datos usuario: ", user);
   return (
     <div className="max-w-[1440px] mx-auto mt-[80px] mb-10 px-12">
       <h1 className="text-2xl font-bold mb-6">Hola Omar 👋</h1>
@@ -94,10 +108,17 @@ export default function UserDashboard() {
               Ver todas
             </a>
           </div>
-          <MentorshipItem
-            image="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=1378&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            title="Matemáticas Avanzadas"
-          />
+          {user.mentors ? (
+            user.mentors.map((mentor) => (
+              <MentorshipItem
+                key={mentor._id}
+                image={mentor.avatar}
+                title={mentor.mentory}
+              />
+            ))
+          ) : (
+            <p>No hay mentorias</p>
+          )}
           <MentorshipItem
             image="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             title="Diseño Gráfico Profesional"

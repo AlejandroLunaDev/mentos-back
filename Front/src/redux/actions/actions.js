@@ -334,7 +334,7 @@ export function getUsers() {
 export function getUserById(id) {
   return async function (dispatch) {
     try {
-      const response = await axios.post(`findUser/${id}`);
+      const response = await axios.get(`api/users/${id}`);
       return dispatch({
         type: GET_USER_BY_ID,
         payload: response.data,

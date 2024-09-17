@@ -271,7 +271,7 @@ const reducer = (state = initialState, { type, payload }) => {
     case GET_USER_BY_ID:
       return {
         ...state,
-        userDetail: payload.detail,
+        userDetail: payload,
       };
     case LOGIN_PROFILE:
       return {

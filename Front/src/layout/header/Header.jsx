@@ -4,6 +4,7 @@ import { BiChevronDown } from "react-icons/bi";
 import MenuMentoriasModal from "./components/MenuMentorias";
 import MenuPerfilModal from "./components/MenuPerfil";
 import { useAuth } from "../../common/hook/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   //const [showModal, setShowModal] = useState(false);
@@ -11,8 +12,13 @@ const Header = () => {
   const [isMenuPerfilOpen, setIsMenuPerfilOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const { user, loginWithGoogle } = useAuth();
+  const navigate = useNavigate(); // Hook para redirigir
 
   const isLoggedIn = !!user?.decodedToken;
+
+  const handleNavigateClickHome = () => {
+    navigate(`/`);
+  };
 
   const handleLoginClick = async () => {
     try {
@@ -33,6 +39,7 @@ const Header = () => {
                   src="./icons/logo.svg"
                   className="flex  cursor-pointer select-none"
                   alt="mentos logo"
+                  onClick={() => handleNavigateClickHome()}
                 />
               </div>
               <div className="hidden md:block relative">

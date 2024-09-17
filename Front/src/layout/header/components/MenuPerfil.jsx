@@ -24,7 +24,7 @@ const MenuPerfilModal = () => {
             <a href="#" className=" text-sm font-semibold text-black hover:text-violeta2">
               Notificaciones
             </a>
-            <a href="#" className=" text-sm font-semibold text-black hover:text-violeta2">
+            <a href="/dashboard" className=" text-sm font-semibold text-black hover:text-violeta2">
               Dashboard
             </a>
             <button onClick={handleLogoutClick}   className=" text-sm font-semibold text-neutral-500 hover:text-violeta">

@@ -49,7 +49,7 @@ const Card = ({ mentor }) => {
 
         <div className="absolute bottom-0 left-0 right-0 p-4 cursor-pointer">
           <h2 className="text-base font-semibold top-[275px] h-6 text-white left-[16px]">
-            {mentor.category ? mentor.category[1] : "Ejemplo"}
+            {mentor.mentory ? mentor.mentory : "Clase Generica"}
           </h2>
           <div className="flex gap-2 left-4 top-[301px]">
             <p className="text-white/90 text-xs font-normal h-4">

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Card from "./components/Card";
-import Mentores from "../common/data/Mentores.json";
 import styles from "./Search.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
@@ -13,32 +12,6 @@ import {
   orderByName,
 } from "../redux/actions/actions";
 
-/* const categories = [
-  {
-    title: "Populares",
-    items: ["Diseño web", "Arte", "Programación", "Matemáticas"],
-  },
-  { title: "Relacionadas", items: ["Física", "Química", "Negocios"] },
-  {
-    title: "Todas",
-    items: [
-      "Arte",
-      "Biología",
-      "Cocina",
-      "Deportes",
-      "Diseño",
-      "Física",
-      "Matemáticas",
-      "Música",
-      "Negocios",
-      "Oratoria",
-      "Programación",
-      "Química",
-      "Salud",
-    ],
-  },
-];
- */
 const MentorSearchAndFilter = () => {
   const allMentors = useSelector((state) => state.allMentors);
   const allMentorsCopy = useSelector((state) => state.allMentorsCopy);
@@ -46,7 +19,6 @@ const MentorSearchAndFilter = () => {
   const allSkills = useSelector((state) => state.skills);
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchTerm2, setSearchTerm2] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedSkills, setSelectedSkills] = useState([]);
   const [priceRange, setPriceRange] = useState([0, 0]);
@@ -61,6 +33,9 @@ const MentorSearchAndFilter = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get("category"); // Categoria selecionada en home
+
+  const minPrice = priceRange[0];
+
 
   const dispatch = useDispatch();
 
@@ -167,12 +142,21 @@ const MentorSearchAndFilter = () => {
   const handleSliderChange = (e) => {
     const newValue = parseInt(e.target.value);
     setPriceRange([priceRange[0], newValue]);
-    const min = priceRange[0];
-    const max = maxPrice;
-    const percentage = ((newValue - min) / (max - min)) * 100;
-
-    e.target.style.background = `linear-gradient(to right, #AA5BFF ${percentage}%, #BDBDBE ${percentage}%)`;
+    
+    updateSliderBackground(newValue);
   };
+  const updateSliderBackground = (value) => {
+    const percentage = ((value - minPrice) / (maxPrice - minPrice)) * 100;
+    const slider = document.getElementById("price-range-slider");
+    if (slider) {
+      slider.style.background = `linear-gradient(to right, #AA5BFF ${percentage}%, #BDBDBE ${percentage}%)`;
+    }
+  };
+
+  useEffect(() => {
+    updateSliderBackground(maxPrice);
+  }, [minPrice, maxPrice]);
+
 
   return (
     <div className="relative mx-auto p-4 flex mt-[80px] flex-col md:flex-row gap-8">

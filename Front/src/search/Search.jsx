@@ -33,7 +33,7 @@ const MentorSearchAndFilter = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get("category"); // Categoria selecionada en home
-console.log(category)
+
   const minPrice = priceRange[0];
 
   const dispatch = useDispatch();
@@ -48,32 +48,45 @@ console.log(category)
   useEffect(() => {
     if (category) {
       setSelectedCategories([category]);
-      dispatch(FilterByCategory(category)); // Aplicar el filtro por categoría
+      dispatch(FilterByCategory(category));
     } else {
-      dispatch({ type: "RESET_FILTER" }); // Reinicia el filtro
+      dispatch({ type: "RESET_FILTER" });
     }
   }, [category, dispatch]);
-  useEffect(() => {
+  
+ /*  useEffect(() => {
     dispatch({ type: "RESET_FILTER" }); // Reinicia el filtro
     dispatch(FilterByPriceRange(priceRange));
   }, [priceRange, dispatch]);
-
+ */
   useEffect(() => {
-    if (!allMentors || allMentors.length === 0) {
+    if (!allMentorsCopy || allMentorsCopy.length === 0) {
       setSelectedCategories([]);
       dispatch(getAllMentor()); // Cargar los mentores si no están en el estado
     }
-  }, [dispatch, allMentors]);
-  const toggleCategory = (category) => {
+  }, [dispatch, allMentorsCopy]);
+
+  useEffect(() => {
+    if (maxPrice <= priceRange[1]) {
+      setMaxPrice(priceRange[1]);
+    }
+    if (priceRange[1] > maxPrice) {
+      setPriceRange([priceRange[0], maxPrice]);
+    }
+
+    updateSliderBackground(priceRange[1]);
+  }, [maxPrice, priceRange]);
+
+  const toggleCategory = (category3) => {
     // Si la categoría ya está seleccionada, deseleccionarla
-    if (selectedCategories.includes(category)) {
+    if (selectedCategories.includes(category3)) {
       setSelectedCategories([]);
       dispatch({ type: "RESET_FILTER" }); // Reinicia el filtro
     } else {
       // Si no está seleccionada, reemplaza la categoría anterior con la nueva
       dispatch({ type: "RESET_FILTER" }); // Reinicia el filtro
-      setSelectedCategories([category]);
-      dispatch(FilterByCategory(category)); // Filtra por la nueva categoría seleccionada
+      setSelectedCategories([category3]);
+      dispatch(FilterByCategory(category3)); // Filtra por la nueva categoría seleccionada
     }
   };
   const toggleSkill = (skill) => {
@@ -143,16 +156,6 @@ console.log(category)
     }
   };
 
-  useEffect(() => {
-    if (maxPrice <= priceRange[1]) {
-      setMaxPrice(priceRange[1]);
-    }
-    if (priceRange[1] >= 10000) {
-      setPriceRange([priceRange[0], 10000]);
-      setMaxPrice(10000);
-    }
-    updateSliderBackground(maxPrice);
-  }, [maxPrice, priceRange]);
 
   return (
     <div className="relative mx-auto p-4 flex mt-[80px] flex-col md:flex-row gap-8">
@@ -327,7 +330,7 @@ console.log(category)
                   {selectedSkills.map((skill) => (
                     <span
                       key={skill}
-                      className={`cursor-pointer px-1 border-[#545557] border-[1px] h-[22px] text-sm rounded-[4px] backdrop-blur-xl ${
+                      className={`cursor-pointer px-1 border-[#7b7e84] border-[1px] h-[22px] text-sm rounded-[4px] backdrop-blur-xl ${
                         selectedSkills.includes(skill)
                           ? "bg-gradient-primary text-white"
                           : "bg-white text-[#545557]"

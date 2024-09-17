@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import MentorCard from "./components/MentorCard";
 import MentorRecomendedCard from "./components/MentorRecomendedCard";
-import { useNavigate } from "react-router-dom";
+/* import { useNavigate } from "react-router-dom"; */
 import { getUsers } from "../../common/service/users/getUsers";
 import { useAuth } from "../../common/hook/useAuth";
 
 export default function MentorProgress() {
   const [mentor, setMentor] = useState(null); // Almacena el primer mentor coincidente
-  const navigate = useNavigate();
+/*   const navigate = useNavigate(); */
   const { user } = useAuth();
 
   useEffect(() => {
@@ -64,7 +64,7 @@ export default function MentorProgress() {
             Elige un mentor y empieza a transformar tu futuro
           </p>
           <button
-            onClick={() => { navigate('/search'); }}
+            onClick={() => { window.location.href = "/search"; }}
             className="bg-white text-sm font-semibold bg-gradient-primary bg-clip-text text-transparent py-2 px-4 border-2 border-violeta hover:bg-violeta2 rounded-tr-lg rounded-bl-lg whitespace-nowrap cursor-pointer select-none"
           >
             <span className="text-md font-semibold">Buscar mentor</span>

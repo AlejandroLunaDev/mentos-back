@@ -22,7 +22,7 @@ export default function Categories() {
   const [categoryImages, setCategoryImages] = useState({});
   const apiKeyPhoto = import.meta.env.VITE_UNSPLASH_API_KEY;
   const imageRefs = useRef([]);
-  const navigate = useNavigate(); // Hook para redirigir
+/*   const navigate = useNavigate(); // Hook para redirigir */
 
   useEffect(() => {
     async function fetchImages() {
@@ -37,7 +37,9 @@ export default function Categories() {
   }, []);
 
   const handleCategoryClick = (category) => {
-    navigate(`/search?category=${category.es}`);
+/*     navigate(`/search?category=${category.es}`); */
+window.location.href = `/search?category=${category.es}`
+
   }
 
   const settings = {

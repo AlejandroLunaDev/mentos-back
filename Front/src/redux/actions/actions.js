@@ -64,7 +64,7 @@ export function getAllMentorTop() {
   return async function (dispatch) {
     try {
       const response = await axios.get("/api/users");
-      //console.log(response.data)
+
       return dispatch({
         type: GET_ALL_MENTORS_TOP,
         payload: response.data,
@@ -180,7 +180,6 @@ export function FilterByPriceRange(PriceRange) {
 export function getmentorsById(id) {
   return async function (dispatch) {
     try {
-      //console.log(title);
       const response = await axios.post(`api/users/${id}`);
       return dispatch({
         type: GET_MENTOR_BY_ID,
@@ -225,7 +224,6 @@ export function getComents() {
 export function postComment(comment) {
   return async function (dispatch) {
     try {
-      //console.log(comment);
       const response = await axios.post(`postComment`, comment);
       return dispatch({
         type: POST_COMMENT,
@@ -240,7 +238,6 @@ export function postComment(comment) {
 export function updateCommentById({ id, rating, comment }) {
   return async function (dispatch) {
     try {
-      console.log(id, rating, comment, "desde actions");
       const response = await axios.put(`updateComment/${id}`, {
         rating,
         comment,
@@ -257,7 +254,6 @@ export function updateCommentById({ id, rating, comment }) {
 export function deleteCommentById(id) {
   return async function (dispatch) {
     try {
-      //console.log(id);
       const response = await axios.delete(`deleteComment/${id}`);
       return dispatch({
         type: DELETE_COMMENT_BY_ID,
@@ -326,7 +322,6 @@ export function getUsers() {
   return async function (dispatch) {
     try {
       const response = await axios.post(`findUser`);
-      // console.log("data.detail-->",response.data.detail);
       return dispatch({
         type: GET_USERS,
         payload: response.data,

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Pricing({ mentor }) {
   const { pricing, _id: mentorId } = mentor; // Extraemos el mentorId
-  console.log(mentor);
+  //console.log(mentor);
   
   // Asegurarse de que pricing esté definido y sea un array
   const sortedPricing = (pricing || []).sort((a, b) => a - b);
@@ -55,7 +55,7 @@ export default function Pricing({ mentor }) {
         navigate('/dashboard');
       });
 
-      console.log('Mentor agregado:', response);
+      //console.log('Mentor agregado:', response);
     } catch (error) {
       console.error('Error al agregar el mentor:', error);
 

@@ -32,7 +32,7 @@ const getUserById = async (userId) => {
           { path: 'mentee', select: 'first_name last_name avatar' }  // Poblar mentee
         ]
       })
-      .populate('mentors', 'first_name last_name email') // Para obtener mentores
+      .populate('mentors', 'mentory avatar first_name last_name email') // Para obtener mentores
       .exec(); // Ejecuta la consulta
   } catch (error) {
     throw new Error('Error getting user by ID: ' + error.message);

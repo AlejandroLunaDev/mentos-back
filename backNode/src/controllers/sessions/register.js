@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt';
 const saltRounds = 10;
 
 const register = async (req, res) => {
-  const { first_name, last_name, age, email, password, role, skills, category, description, pricing, time_applied, experience, education } = req.body;
+  const { first_name, last_name, age, email, password, role, skills, category, description, pricing, time_applied, mentory, experience, education } = req.body;
 
   // Validar campos requeridos
   if (!first_name || !age || !email || !password) {
@@ -32,7 +32,8 @@ const register = async (req, res) => {
       likes: [],       // Inicializar como un array vacío
       reviews: [],     // Inicializar como un array vacío
       chats: [],       // Inicializar como un array vacío
-      top: false,      // Inicializar el campo booleano en false
+      top: false,
+      mentory: mentory || false      // Inicializar el campo booleano en false
     });
 
     // Si el rol es mentor, incluir los campos adicionales

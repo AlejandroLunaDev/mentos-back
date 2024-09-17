@@ -19,6 +19,7 @@ const callbackGoogle = async (req, res) => {
       mentors: user.mentors,
       reviews: user.reviews,
       chats: user.chats,
+      mentory: user.mentory,
     };
 
     // Si el usuario es mentor, añadimos campos adicionales
@@ -31,6 +32,7 @@ const callbackGoogle = async (req, res) => {
         time_applied: user.time_applied,
         experience: user.experience,
         education: user.education,
+        mentory: user.mentory,
       });
     }
 

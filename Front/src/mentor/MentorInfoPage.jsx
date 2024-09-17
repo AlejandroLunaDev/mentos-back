@@ -5,7 +5,7 @@ import ExperienceCard from './components/ExperienceCard';
 import EducationCard from './components/EducationCard';
 import Pricing from './components/Pricing';
 import Estadistic from './components/Estadistic';
-import SimilarMentorCarrousel from './components/SimilarMentorCarrousel';
+/* import SimilarMentorCarrousel from './components/SimilarMentorCarrousel'; */
 import Reviews from './components/Reviews';
 import averageAndCommetsNum from '../common/helper/averageAndCommetsNum';
 import { getBaseUrl } from '../common/helper/envHelper';
@@ -166,8 +166,8 @@ export default function MentorInfoPage() {
               <Pricing mentor={mentor} />
               <h2 className='text-xl font-semibold'>Estadísticas de la comunidad</h2>
               <Estadistic />
-              <h2 className='text-xl font-semibold'>Mentorías similares</h2>
-              <SimilarMentorCarrousel mentor={mentor} />
+   {/*            <h2 className='text-xl font-semibold'>Mentorías similares</h2> */}
+       {/*        <SimilarMentorCarrousel mentor={mentor} /> */}
             </aside>
           </article>
         </div>

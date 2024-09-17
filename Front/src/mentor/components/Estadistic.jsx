@@ -6,7 +6,7 @@ export default function Estadistic() {
         <div className="flex gap-2">
             <img src="/icons/rocket.svg" alt="" />
             <div>
-                <h3 className="font-semibold">3165 Miutos</h3>
+                <h3 className="font-semibold">3165 Minutos</h3>
                 <small>Minutos de mentorías</small>
             </div>
         </div>

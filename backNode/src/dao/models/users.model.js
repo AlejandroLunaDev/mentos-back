@@ -83,6 +83,9 @@ const userSchema = new mongoose.Schema({
   time_applied: {
     type: Number, // Tiempo aplicado a mentorías (en horas o formato necesario)
   },
+  mentory: {
+    type: String, // LinkedIn de la cuenta de mentorí
+  },
   experience: [
     {
       title: { type: String, required: true }, // Título del puesto o experiencia

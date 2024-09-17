@@ -33,7 +33,7 @@ const MentorSearchAndFilter = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get("category"); // Categoria selecionada en home
-
+console.log(category)
   const minPrice = priceRange[0];
 
   const dispatch = useDispatch();

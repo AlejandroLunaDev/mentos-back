@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, useRef } from "react";
 import { getCategoryPhoto } from "../../../common/service/unplash/getPhotos";
-import { useNavigate } from "react-router-dom";
+/* import { useNavigate } from "react-router-dom"; */
 import Slider from "react-slick";
 import PeopleIcon from "../../../common/components/icons/PeopleIcon";
 import "slick-carousel/slick/slick.css";

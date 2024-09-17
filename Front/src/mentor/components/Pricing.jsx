@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { addMentortoUser } from '../../common/service/users/addMentortoUser';
 import Swal from 'sweetalert2'; // Importamos SweetAlert2
 import 'sweetalert2/dist/sweetalert2.min.css'; // Asegúrate de importar los estilos de SweetAlert2
+import { useNavigate } from 'react-router-dom';
 
 export default function Pricing({ mentor }) {
   const { pricing, _id: mentorId } = mentor; // Extraemos el mentorId
@@ -15,7 +16,7 @@ export default function Pricing({ mentor }) {
   const basic = sortedPricing[0]?.toFixed(2) || '0.00';
   const premium = sortedPricing[1]?.toFixed(2) || '0.00';
   const pack = sortedPricing[2]?.toFixed(2) || '0.00';
-
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('basic');
 
   const handleAddMentor = async () => {
@@ -49,6 +50,9 @@ export default function Pricing({ mentor }) {
           popup: 'rounded-lg shadow-lg',
           confirmButton: 'bg-gradient-primary text-white py-2 px-4 rounded-lg',
         },
+      }).then(() => {
+        // Redirigir a /dashboard después de que el usuario cierre la alerta
+        navigate('/dashboard');
       });
 
       console.log('Mentor agregado:', response);

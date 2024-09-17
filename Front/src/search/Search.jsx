@@ -13,7 +13,7 @@ import {
   orderByName,
 } from "../redux/actions/actions";
 
-const categories = [
+/* const categories = [
   {
     title: "Populares",
     items: ["Diseño web", "Arte", "Programación", "Matemáticas"],
@@ -38,19 +38,21 @@ const categories = [
     ],
   },
 ];
-
-const suggestedSkills = ["Geometría", "Aritmética", "Ecuaciones"];
-
+ */
 const MentorSearchAndFilter = () => {
   const allMentors = useSelector((state) => state.allMentors);
   const allMentorsCopy = useSelector((state) => state.allMentorsCopy);
+  const categoriesArray = useSelector((state) => state.categories);
+  const allSkills = useSelector((state) => state.skills);
 
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm2, setSearchTerm2] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedSkills, setSelectedSkills] = useState([]);
   const [priceRange, setPriceRange] = useState([0, 0]);
-  
-  const [orderIcon, setOrderIcon] = useState(true); 
+  const [suggestedSkills, setSuggestedSkills] = useState([]);
+
+  const [orderIcon, setOrderIcon] = useState(true);
   const [isCategoryOpen, setIsCategoryOpen] = useState(true); // Estado para desplegar categorías
   const [isSkillsOpen, setIsSkillsOpen] = useState(true); // Estado para desplegar habilidades
   const [isPriceOpen, setIsPriceOpen] = useState(true); // Estado para desplegar precio
@@ -62,6 +64,13 @@ const MentorSearchAndFilter = () => {
 
   const dispatch = useDispatch();
 
+  const categories = [
+    {
+      title: "Todas",
+      items: categoriesArray,
+    },
+  ];
+
   useEffect(() => {
     if (category) {
       setSelectedCategories([category]);
@@ -72,7 +81,7 @@ const MentorSearchAndFilter = () => {
   }, [category, dispatch]);
   useEffect(() => {
     dispatch({ type: "RESET_FILTER" }); // Reinicia el filtro
-    dispatch(FilterByPriceRange(priceRange))
+    dispatch(FilterByPriceRange(priceRange));
   }, [priceRange, dispatch]);
 
   useEffect(() => {
@@ -81,7 +90,6 @@ const MentorSearchAndFilter = () => {
       dispatch(getAllMentor()); // Cargar los mentores si no están en el estado
     }
   }, [dispatch, allMentors]);
-
   const toggleCategory = (category) => {
     // Si la categoría ya está seleccionada, deseleccionarla
     if (selectedCategories.includes(category)) {
@@ -100,25 +108,26 @@ const MentorSearchAndFilter = () => {
       : [...selectedSkills, skill];
 
     setSelectedSkills(updatedSkills);
+    setSearchTerm(""); // Limpiar el input después de seleccionar una habilidad
+    setSuggestedSkills([]); // Limpiar las sugerencias
 
     if (updatedSkills.length === 0) {
-      // Si no hay habilidades seleccionadas, filtrar solo por la categoría
-      dispatch({ type: "RESET_FILTER" }); // Reinicia el filtro de habilidades
+      dispatch({ type: "RESET_FILTER" });
       if (selectedCategories.length > 0) {
-        dispatch(FilterByCategory(selectedCategories[0])); // Filtra por la categoría seleccionada si existe una
+        dispatch(FilterByCategory(selectedCategories[0]));
       }
     } else {
-      dispatch(FilterBySkills(updatedSkills)); // Filtra por todas las habilidades seleccionadas
+      dispatch(FilterBySkills(updatedSkills));
     }
   };
 
-  const orderMentor = ()=>{
-    if (orderIcon){
-      dispatch(orderByName("A"))
-      setOrderIcon(false)
-    }else{
-      dispatch(orderByName("D"))
-      setOrderIcon(true)
+  const orderMentor = () => {
+    if (orderIcon) {
+      dispatch(orderByName("A"));
+      setOrderIcon(false);
+    } else {
+      dispatch(orderByName("D"));
+      setOrderIcon(true);
     }
   };
 
@@ -133,7 +142,27 @@ const MentorSearchAndFilter = () => {
     if (maxPrice <= priceRange[1]) {
       setMaxPrice(priceRange[1]);
     }
+    if (priceRange[1] > 10000) {
+      setPriceRange([priceRange[0], 10000]);
+    }
   }, [maxPrice, priceRange]);
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+
+    // Filtrar habilidades según el término de búsqueda
+    const filteredSkills = allSkills.filter(
+      (skill) =>
+        typeof skill === "string" && skill.toLowerCase().includes(value)
+    );
+    setSuggestedSkills(filteredSkills); // Mostrar las sugerencias filtradas
+
+    // Si no hay habilidades seleccionadas, filtrar solo por el término de búsqueda
+    if (selectedSkills.length === 0) {
+      dispatch({ type: "FILTER_BY_SKILLS", payload: value });
+    }
+  };
 
   const handleSliderChange = (e) => {
     const newValue = parseInt(e.target.value);
@@ -153,9 +182,9 @@ const MentorSearchAndFilter = () => {
             <img src="./icons/lupa.svg" className="" />
             <input
               type="text"
-              placeholder="Buscar mentores..."
+              placeholder="Busca por habilidades"
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={handleInputChange}
               className="pl-3 pr-4 py-2 w-5/6 outline-none"
             />
           </div>
@@ -211,11 +240,17 @@ const MentorSearchAndFilter = () => {
             </p>
             {/* Colocar un limite de escritura en el buscador */}
 
-            <div className="flex flex-nowrap mr-12 h-[21px] cursor-pointer " onClick={orderMentor} >
+            <div
+              className="flex flex-nowrap mr-12 h-[21px] cursor-pointer "
+              onClick={orderMentor}
+            >
               <button className="text-sm text-[#545557] font-semibold">
                 Ordenar Por{" "}
               </button>
-              <img src="./icons/orderArrow.svg" className={`ml-2  size-5  ${orderIcon ? "rotate-180" : ""}`} />
+              <img
+                src="./icons/orderArrow.svg"
+                className={`ml-2  size-5  ${orderIcon ? "rotate-180" : ""}`}
+              />
             </div>
           </div>
         </div>
@@ -269,7 +304,7 @@ const MentorSearchAndFilter = () => {
           )}
         </div>
         {/* Habilidades */}
-        <div className="mb-4 bg-white">
+        <div className="mb-4  bg-white">
           <div
             className="flex items-center justify-between w-full p-2 font-semibold bg-gray-100 rounded-t-lg cursor-pointer"
             onClick={() => setIsSkillsOpen(!isSkillsOpen)}
@@ -284,34 +319,46 @@ const MentorSearchAndFilter = () => {
           </div>
           {isSkillsOpen && (
             <div className="p-2 border border-t-0 rounded-b-lg bg-white">
-              <div className="relative flex items-center border-[1.5px] h-[48px] border-[#BDBDBE] rounded-md">
+              <div className="relative flex items-center border-[1.5px] w-[87%] h-[48px] border-[#BDBDBE] rounded-md">
                 <img src="./icons/lupa.svg" className="ml-3" />
                 <input
                   type="text"
-                  placeholder="Buscar..."
+                  placeholder="Busca por habilidades"
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-3 pr-4 text-[#2E2E2E] placeholder:font-semibold placeholder:text-sm placeholder:text-[#2E2E2E] w-full outline-none"
+                  onChange={handleInputChange}
+                  className="pl-3 pr-4 w-5/6  text-[#2E2E2E] placeholder:font-semibold placeholder:text-sm placeholder:text-[#545557] outline-none"
                 />
+                {suggestedSkills.length > 0 && (
+                  <div className="absolute top-full left-0 right-0 bg-white border border-[#BDBDBE] rounded-md max-h-40 overflow-y-auto z-10">
+                    {suggestedSkills.map((skill) => (
+                      <div
+                        key={skill}
+                        className="px-4 py-2 cursor-pointer hover:bg-gray-200"
+                        onClick={() => toggleSkill(skill)} // Seleccionar la habilidad al hacer clic
+                      >
+                        {skill}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
-              <h3 className="font-semibold text-purple-600 mb-2 mt-2">
-                Sugeridas
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {suggestedSkills.map((skill) => (
-                  <span
-                    key={skill}
-                    className={`cursor-pointer px-1  border-[#545557] border-[1px] h-[22px] text-sm rounded-[4px]  ${
-                      selectedSkills.includes(skill)
-                        ? "bg-gradient-primary text-white"
-                        : "bg-white text-[#545557]"
-                    }`}
-                    onClick={() => toggleSkill(skill)}
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              {selectedSkills.length > 0 && (
+                <div className="flex flex-wrap gap-2 top-14 left-0 right-0 mt-2 rounded-md max-h-40">
+                  {selectedSkills.map((skill) => (
+                    <span
+                      key={skill}
+                      className={`cursor-pointer px-1 border-[#545557] border-[1px] h-[22px] text-sm rounded-[4px] backdrop-blur-xl ${
+                        selectedSkills.includes(skill)
+                          ? "bg-gradient-primary text-white"
+                          : "bg-white text-[#545557]"
+                      }`}
+                      onClick={() => toggleSkill(skill)} // Al hacer clic, se elimina o añade la skill
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>

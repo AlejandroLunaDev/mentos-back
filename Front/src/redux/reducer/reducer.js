@@ -56,10 +56,25 @@ const reducer = (state = initialState, { type, payload }) => {
     //----------------------------MentorS-----------------------------------
     case GET_ALL_MENTORS: {
       let mentors = payload.filter(user => user.role === "mentor");
+      // Extraer categorías únicas del primer elemento de mentor.category
+      let categories = [...new Set(
+        mentors
+          .map(mentor => mentor.category[0]) // Obtener el primer elemento de cada categoría
+          .filter(Boolean) // Filtrar los valores vacíos o undefined
+      )];
+      let skills = [...new Set(
+        mentors
+          .flatMap(mentor => mentor.skills) // Aplana los arrays de skills de cada mentor
+          .filter(Boolean) // Filtrar valores vacíos o undefined
+      )];
+      
+      console.log(skills)
       return {
         ...state,
         allMentors: mentors,
         allMentorsCopy: mentors,
+        categories: categories,
+        skills: skills
       };
     }
     case GET_MENTORS: {
@@ -116,14 +131,18 @@ const reducer = (state = initialState, { type, payload }) => {
         allMentorsCopy: mentorsFilter
       };
     }
-    case FILTER_BY_SKILLS:
+    case FILTER_BY_SKILLS: {
+      const searchTerm = payload.toLowerCase();
       let mentorsFilter = state.allMentors.filter(mentor =>
-        payload.every(skill => mentor.skills.includes(skill))
-      )
+        mentor.skills.some(skill =>
+          skill.toLowerCase().includes(searchTerm) // verificar si el skill contiene el término de búsqueda
+        )
+      );
       return {
         ...state,
         allMentorsCopy: mentorsFilter
       };
+    }
 
     case FILTER_BY_NAME:
       if (payload === "ALL")

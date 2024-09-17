@@ -42,7 +42,7 @@ const Card = ({ mentor }) => {
         <div className="w-[538px] pl-8">
           <div className="flex justify-between items-start">
             <div className="">
-              <h3 className="text-2xl font-semibold">{mentor.category[1] ? mentor.category[1] : "Ejemplo"}
+              <h3 className="text-2xl font-semibold">{mentor.mentory ? mentor.mentory : "Clase Generica"}
               </h3>
               <div className="flex flex-wrap py-1">
                 <p className="text-black font-normal">

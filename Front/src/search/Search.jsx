@@ -36,7 +36,6 @@ const MentorSearchAndFilter = () => {
 
   const minPrice = priceRange[0];
 
-
   const dispatch = useDispatch();
 
   const categories = [
@@ -113,15 +112,6 @@ const MentorSearchAndFilter = () => {
     dispatch({ type: "RESET_FILTER" }); // Reinicia el estado con todos los mentores
   };
 
-  useEffect(() => {
-    if (maxPrice <= priceRange[1]) {
-      setMaxPrice(priceRange[1]);
-    }
-    if (priceRange[1] > 10000) {
-      setPriceRange([priceRange[0], 10000]);
-    }
-  }, [maxPrice, priceRange]);
-
   const handleInputChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
@@ -142,7 +132,7 @@ const MentorSearchAndFilter = () => {
   const handleSliderChange = (e) => {
     const newValue = parseInt(e.target.value);
     setPriceRange([priceRange[0], newValue]);
-    
+
     updateSliderBackground(newValue);
   };
   const updateSliderBackground = (value) => {
@@ -154,9 +144,15 @@ const MentorSearchAndFilter = () => {
   };
 
   useEffect(() => {
+    if (maxPrice <= priceRange[1]) {
+      setMaxPrice(priceRange[1]);
+    }
+    if (priceRange[1] >= 10000) {
+      setPriceRange([priceRange[0], 10000]);
+      setMaxPrice(10000);
+    }
     updateSliderBackground(maxPrice);
-  }, [minPrice, maxPrice]);
-
+  }, [maxPrice, priceRange]);
 
   return (
     <div className="relative mx-auto p-4 flex mt-[80px] flex-col md:flex-row gap-8">

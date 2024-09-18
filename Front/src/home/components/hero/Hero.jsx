@@ -5,7 +5,7 @@ export default function Hero() {
   const name = user?.decodedToken?.first_name;
 
   return (
-    <div className=" h-[283px] w-full flex items-center px-[120px] justify-between bg-[#FAFAFA] pt-[120px] ">
+    <div className=" h-[330px] w-full flex items-center px-[120px] justify-between bg-[#FAFAFA] pt-[120px] pb-[50px] ">
       <div>
         {user && (
           <small className='text-[22px] text-[#292B2D] font-bold '>

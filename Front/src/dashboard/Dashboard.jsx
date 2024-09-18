@@ -97,7 +97,7 @@ export default function UserDashboard() {
   console.log("datos usuario: ", user);
   return (
     <div className="max-w-[1440px] mx-auto mt-[80px] mb-10 px-12">
-      <h1 className="text-2xl font-bold mb-6">Hola Omar 👋</h1>
+      <h1 className="text-2xl font-bold mb-6">Hola {user.first_name} 👋</h1>
       <div className=" grid grid-cols-4  gap-4">
         <Banner />
 
@@ -109,14 +109,19 @@ export default function UserDashboard() {
             </a>
           </div>
           {user.mentors ? (
-            user.mentors.map((mentor) => (
+            <MentorshipItem
+              key={user.mentors[0]._id}
+              image={user.mentors[0].avatar}
+              title={user.mentors[0].mentory}
+            />
+          ) : (
+            /* user.mentors.map((mentor) => (
               <MentorshipItem
                 key={mentor._id}
                 image={mentor.avatar}
                 title={mentor.mentory}
               />
-            ))
-          ) : (
+            )) */
             <p>No hay mentorias</p>
           )}
           <MentorshipItem

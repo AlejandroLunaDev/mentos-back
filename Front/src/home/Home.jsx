@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <section className="">
-      <section className="">
+      <section className="bg-[#FAFAFA]">
         <Hero />
       </section>
       {hasUser && (

@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="flex items-center mb-4">
             {/*<h2 className="font-bold text-xl">Mentos</h2>*/}
             <div className="ml-2">
-              <img src="./public/icons/logo.svg" alt="Logo" />
+              <img src="/public/icons/logo.svg" alt="Logo" />
             </div>
           </div>
           <p className="mb-6 font-size-16">

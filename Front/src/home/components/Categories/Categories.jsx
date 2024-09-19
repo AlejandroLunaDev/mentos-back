@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, useRef } from "react";
 import { getCategoryPhoto } from "../../../common/service/unplash/getPhotos";
-/* import { useNavigate } from "react-router-dom"; */
 import Slider from "react-slick";
 import PeopleIcon from "../../../common/components/icons/PeopleIcon";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./categories.css";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
   { en: "Art", es: "Arte", amount: 500 },
@@ -22,7 +22,7 @@ export default function Categories() {
   const [categoryImages, setCategoryImages] = useState({});
   const apiKeyPhoto = import.meta.env.VITE_UNSPLASH_API_KEY;
   const imageRefs = useRef([]);
-/*   const navigate = useNavigate(); // Hook para redirigir */
+   const navigate = useNavigate(); // Hook para redirigir */
 
   useEffect(() => {
     async function fetchImages() {
@@ -37,9 +37,7 @@ export default function Categories() {
   }, []);
 
   const handleCategoryClick = (category) => {
-/*     navigate(`/search?category=${category.es}`); */
-window.location.href = `/search?category=${category.es}`
-
+    navigate(`/search?category=${category.es}`);
   }
 
   const settings = {
@@ -75,7 +73,7 @@ window.location.href = `/search?category=${category.es}`
   };
 
   return (
-    <div className=" relative slider-container w-full ">
+    <div className=" relative slider-container w-full bg-[#FAFAFA]">
       <header className="pl-[195px]">
         <small className="text-base">Explora</small>
         <h2 className="text-lg font-semibold mb-4">Categorías Populares</h2>

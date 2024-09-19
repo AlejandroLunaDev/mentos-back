@@ -15,7 +15,7 @@ const GoogleCallback = () => {
 
     if (token) {
       const decodedToken = jwtDecode(token);
-      console.log(decodedToken);
+      //console.log(decodedToken);
       dispatch(loginGoogleUserCallback(decodedToken));
       navigate("/"); // Redirigir a la página principal después del login
     } else {

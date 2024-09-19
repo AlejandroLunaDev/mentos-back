@@ -2,11 +2,14 @@
 import { createContext, useEffect, useState } from 'react';
 import { loginGoogleUser } from '../service/auth/loginGoogleUser';
 import { jwtDecode } from 'jwt-decode';
+import { useDispatch, useSelector } from "react-redux";
+import { getUserById } from '../../redux/actions/actions';
 
 export const AuthContext = createContext();
 
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const token = localStorage.getItem('authToken'); // Lee el token desde localStorage
@@ -14,9 +17,11 @@ export default function AuthProvider({ children }) {
       const decodedToken = jwtDecode(token);
       localStorage.setItem('user', JSON.stringify(decodedToken));
       setUser({ decodedToken });
+      dispatch(getUserById(decodedToken.id))
     }
-  }, []);
-  console.log(user)
+  }, [dispatch]);
+
+  //console.log(user)
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);

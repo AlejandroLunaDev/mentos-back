@@ -68,7 +68,6 @@ const reducer = (state = initialState, { type, payload }) => {
           .filter(Boolean) // Filtrar valores vacíos o undefined
       )];
       
-      console.log(skills)
       return {
         ...state,
         allMentors: mentors,
@@ -124,7 +123,7 @@ const reducer = (state = initialState, { type, payload }) => {
       };
     case FILTER_BY_CATEGORY: {
       let mentorsFilter = state.allMentorsCopy.filter(mentor =>
-        mentor.category[0] === payload
+          mentor.category.includes(payload)
       )
       return {
         ...state,
@@ -272,7 +271,7 @@ const reducer = (state = initialState, { type, payload }) => {
     case GET_USER_BY_ID:
       return {
         ...state,
-        userDetail: payload.detail,
+        userDetail: payload,
       };
     case LOGIN_PROFILE:
       return {
